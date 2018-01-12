@@ -1,0 +1,1128 @@
+/* 1 - GLOBAL RESETS */
+
+
+/* 1.1 - Normalize box model * overflow -- DO NOT DELETE... or IE will break - 1.1 */
+html                            { box-sizing: content-box; }
+/**, *:before, *:after            { box-sizing: inherit; }*/
+html, body                      { overflow-x: hidden }
+body                            { line-height: normal; }
+.navbar                         { top: 96px !important; }
+.navbar + div                   { height: 149px !important; } /*temporary fix to move breadcrumb and main down below extra nav bar */
+
+/* 1.3 - Eliminate default input button styles imposed by browsers like safari - 1.3 */
+input, button					{
+                                  -webkit-appearance: none;
+                                  -moz-appearance: none;
+                                  appearance: none;
+                                  border-radius: 0px;
+                                  height: 36px;
+                                }
+
+
+/* 1.4 - Cursor and Touch - 1.4 */
+i, nav ul, nav ul a,
+.btn-sml, .btn-lrg,
+.social, .social a              { cursor: default; }
+nav input                       { cursor: pointer; }
+nav input                       { -webkit-touch-callout: none; }
+button:focus                    { outline: 0; }
+
+
+
+/* 1.5 - Set basic background colors - 1.5 */
+
+/* 1.6.1 - Solid Backgrounds - 1.6.1 */
+body, main/*, div*/           { background: #fbfdfe; } /* off-white */
+footer                        { background: #091413; } /* off-black */
+footer div                    { background: transparent; } /* transparent */
+.bg-light.gray                { background: #f5f5f5; } /* light medium gray was #e0e0e0*/
+.bg-light.orange              { background: #ff8a65; } /* medium orange */
+.bg-light.teal                { background: #4db6ac; } /* medium teal */
+.bg-dark.gray                 { background: #424242; } /* dark gray */
+.bg-dark.orange               { background: #ce3e11; } /* medium orange */
+.bg-dark.teal, header         { background: #00796b; } /* dark teal */
+.field-wrapper input          { background: rgba(255,255,255,.86); }
+.content__button input        { background: #444 !important; }
+.content__button input:hover  { background: #555 !important; }
+#nav_primary > ul > li > a:before,
+#nav_primary ul ul li:hover a { background: #fff; }
+#nav_primary ul ul li         { background: rgba(238,238,238,.94); }
+#nav_primary                  { background: rgba(0,0,0,.94); }
+.FormWrapper                  { background: #f5f5f5; } /* the entire box surrounding the area for adding new comments at the bottom of a thread */
+
+
+/* 2 - TEXT STYLING - 2 */
+
+
+/* 2.1 - Font Selection - 2.1 */
+html, body                    { font-family: 'Roboto', Arial, sans-serif; }
+
+/* 2.4 - Text Alignment - 2.4 */
+footer h4                       { text-align: left; }
+footer .social, #copyright,
+#nav_primary ul                 { text-align: center; }
+
+/* 2.5 - Font Size - 2.5 */
+html, body                      { font-size: 16px; } /* base font-size by which all percentages are multiplied to produce final element font-size */
+h1                              { font-size: 200%; }
+h2                              { font-size: 175%; }
+h3                              { font-size: 150%; }
+h4                              { font-size: 125%; }
+p                               { font-size: 112.5%; }
+label, input                    { font-size: 16px; }
+footer h4                       { font-size: 150%; }
+blockquote p                    { font-size: 150%; }
+.btn-lrg                        { font-size: 125%; }
+.btn-sml                        { font-size: 100%; }
+#nav_primary i, .social a       { font-size: 32px; }
+#nav_primary > ul > li > a,
+footer li                       { font-size: 16px; }
+#nav_primary ul ul li a         { font-size: 14px; }
+#copyright                      { font-size: 12px; }
+.CategoryTable h2               { font-size: 110%; }
+.Discussion .PageTitle h1       { font-size: 200%; }
+.Message h2                     { font-size: 150%; }
+.Message h3                     { font-size: 125%; }
+.Reactions                      { font-size: 12px; } /* text labels for the small reactions under each post/comment */
+
+
+/* 2.6 - Font Weight - 2.6 */
+*, footer h4                    { font-weight: 300; } /* Establishes a baseline font-weight for all items which overrides the browsers defaults */
+h1                              { font-weight: 100; }
+h2, h3, h4                      { font-weight: 300; }
+em, strong                      { font-weight: 400; }
+thead, th, i                    { font-weight: 500; }
+.Discussion .PageTitle h1       { font-weight: 300; }
+.btn-lrg, .btn-sml,
+.TagCloud li a, .Discussion a   { font-weight: 400; }
+.field-wrapper input,
+.CategoryTable h2               { font-weight: 500; }
+
+
+/* 2.7 - Color - 2.7 */
+p                               { color: rgba(17,17,17,.7); }
+a:link, a:visited               { color: #424242; }
+a:hover, a:active               { color: #212121; }
+h1, footer h4,
+#footer_links a:hover,
+#footer_links label             { color: #fff; }
+h2, em, i                       { color: #f4511e; }
+h3, h4                          { color: #000; }
+/*a:link, a:visited               { color: #ff8a65; }
+a:hover, a:active               { color: #ff7043; }*/
+#nav_primary ul ul li a         { color: #333 !important; } /* set important to override the different default link states active, visited, etc. */
+#nav_primary i, #copyright      { color: #666; }
+.content__button input          { color: #bbb !important; }
+.content__button input:hover    { color: #fff !important; }
+#nav_primary > ul > li > a      { color: #f5faf9 !important; } /* set important to override the different default link states active, visited, etc. */
+#footer_links a:hover,
+#footer_links label,
+.social a:hover .fa             { color: #fff; }
+#nav_primary ul ul li:hover a   { color: #009688; } /* teal */
+footer li,
+#footer_links a                 { color: rgba(255,255,255,.46); }
+#nav_primary i:hover            { color: rgba(255,255,255,.86); }
+input::-webkit-input-placeholder{ color: rgba(0,0,0,.4) !important; }
+.Message h2                     { color: #424242; }
+.CategoryTable h2 a             { color: #424242; }
+.CategoryTable h2 a:hover       { color: #212121; }
+.TagCloud li a:link,
+.TagCloud li a:visited          { color: #ff8a65; }
+.TagCloud li a:hover,
+.TagCloud li a:active           { color: #ff7043; }
+.Message a:link,
+.Message a:visited              { color: #26a69a; }
+.Message a:hover,
+.Message a:active               { color: #ff7043; }
+.Reactions a:link,
+.Reactions a:visited            { color: #7e57c2; }
+.Reactions a:hover,
+.Reactions a:active             { color: #5e35b1; }
+
+
+/* 2.8 - Line Height and Spacing - 2.8 */
+h1, h2, h3, h4, h5, h6          { margin-bottom: 0.6em; }
+.Message * + h2                 { margin-top: 2em; }
+.Message * + h3                 { margin-top: 1em; }
+p                               { line-height: 1.5em; }
+main li                         { line-height: 1.3em; } /* important to use main li so we do not impact the lists for navigation and footer */
+#nav_primary > ul > li > a      { line-height: 36px; } /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
+.CategoryDescription            { line-height: 1.5em; }
+
+/* 2.9.2 - Lists - 2.9.2 */
+footer ul                       { list-style: none; }
+
+
+/* 4 - LAYOUT - 4 */
+
+
+/* 4.1 - Display - 4.1 */
+#nav_secondary_container::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
+                                { display: none; }
+#nav_primary input, #nav_primary i,
+#nav_primary .fa,
+#nav_primary .social            { display: none;}
+h1, h2, h3, h4, h5, h6, p, img,
+#nav_primary ul a,
+#nav_primary > ul > li:hover > ul
+                                { display: block; }
+#nav_primary ul ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
+footer .social a                { display: inline-block; }
+
+
+/* 4.2 - Flexible Box Model Control - 4.2 */
+
+
+/* 4.2.1 - Flex Containers - 4.2.1 */
+/* Properties impacting the container which will be used to hold flexing items */
+
+
+/* 4.2.1.1 - Flex Display - 4.2.1.1 */
+/* Tells a container to display its contents using a flexible box model */
+.field-wrapper,
+.content__button,
+#nav_primary,
+#footer_links               {
+                              display: -webkit-box;
+                              display: -webkit-flex;
+                              display: -ms-flexbox;
+                              display: flex;
+                            }
+#nav_primary > ul > li      {
+                              display: -webkit-inline-box;
+                              display: -webkit-inline-flex;
+                              display: -ms-inline-flexbox;
+                              display: inline-flex;
+                            }
+
+
+/* 4.2.1.3 - Flex Wrap - 4.2.1.3 */
+/* Controls whether the flex container is single-line or multi-line, and the direction of the cross axis */
+#footer_links               {
+                              -webkit-flex-wrap: wrap;
+                                  -ms-flex-wrap: wrap;
+                                      flex-wrap: wrap;
+                            }
+
+
+/* 4.2.1.4 - Justify Content - 4.2.1.4 */
+/* Align all items along the main axis of a flexible container */
+#nav_primary                {
+                                     -webkit-box-pack: justify;
+                              -webkit-justify-content: space-between;
+                                        -ms-flex-pack: justify;
+                                      justify-content: space-between;
+                            }
+#footer_links								{
+                                     -webkit-box-pack: center;
+                              -webkit-justify-content: center;
+                                        -ms-flex-pack: center;
+                                      justify-content: center;
+                            }
+.content__button			{
+                                     -webkit-box-pack: end;
+                              -webkit-justify-content: flex-end;
+                                        -ms-flex-pack: end;
+                                      justify-content: flex-end;
+                            }
+
+
+/* 4.2.1.5 - Align Items - 4.2.1.5 */
+/* Align all items along the cross axis of a flexible container */
+#nav_primary,
+#nav_primary li             {
+                              -webkit-box-align: center;
+                              -webkit-align-items: center;
+                              -ms-flex-align: center;
+                              align-items: center;
+                            }
+
+
+/* 4.2.2.4 - Flex Basis - 4.2.2.4 */
+/* The initial width or height (whichever is on the main axis) of the flex item, before free space is distributed according to the flex factors. */
+#footer_links > div         { -webkit-flex-basis: 33.33%;  -ms-flex-preferred-size: 33.33%;  flex-basis: 33.33%; }
+
+
+/* 4.3 - Margin & Padding - 4.3 */
+main                        { padding-bottom: 96px; }
+footer                      { padding: 96px 18% 16px 18%; }
+#nav_primary                { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+.social                     { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
+.Reactions                  { margin: 2em 0 0 0; }
+
+/* 4.4 - Position - 4.4 */
+.noScroll, #nav_primary		{ position: fixed; }
+#nav_primary ul, #nav_primary li,
+#nav_primary li a, #nav_primary li a::before,
+#nav_primary > a            { position: relative; }
+#nav_primary > ul > li > a:before,
+#nav_primary ul ul          { position: absolute; }
+
+
+/* 4.6 - Shadows - 4.6 */
+#nav_primary				{
+							-webkit-box-shadow: 0 1px 24px rgba(0,0,0,0.6);
+							        box-shadow: 0 1px 24px rgba(0,0,0,0.6);
+							}
+#nav_primary ul ul          {
+							-webkit-box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
+							        box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
+							}
+.social a:hover				{
+							-webkit-box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
+							        box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
+							}
+
+
+/* 4.8 - Z-Index - 4.8 */
+#nav_primary                    { z-index: 10000; }
+#nav_primary i, .social         { z-index: 1; }
+
+
+/* 4.9 - Box Sizing - 4.9 */
+#nav_primary, .social a         { box-sizing: border-box; }
+
+
+/* 4.99 - Visibility - 4.99 */
+#nav_primary > ul > li > a:before,
+#nav_primary ul ul              { visibility: hidden; }
+#nav_primary > ul > li > a:hover:before,
+#nav_primary li:hover > ul      { visibility: visible; }
+#nav_primary input              { opacity: 0; }
+
+
+/* 5.1 - Primary Navigation - 5.1 */
+#nav_primary ul ul a              { line-height: 48px;}
+#nav_primary > ul > li > a        { margin: 0 16px; } /* horizontal spacing between main menu items */
+#nav_primary > ul > li:last-child > a { margin-right: 0 !important; } /*removes the unnecessary right margin from the last menu item, as the navbar itself already has sufficient padding. top amrgin should be same as margin above */
+#nav_primary > a                  { height: 70px; } /* height of grooper logo */
+#nav_primary, nav > ul > li       { height: 96px; } /* height of entire navbar */
+#nav_primary > ul > li > a:before { height: 1px; } /* sets height of the primary nav link underlines that will appear during hover */
+#nav_primary > a                  { width: 214px; } /*set to actual width of logo image */
+#nav_primary ul ul                { width: 200%; }
+#nav_primary,
+#nav_primary > ul > li > a:before { width: 100%; }
+#nav_primary ul ul li             { width: 100%; } /* determines width of submenu items */
+#nav_primary                      { top: 0; }
+#nav_primary ul ul                { top: calc(100% - 32px); } /* adjusts the location of the dropdown menu upward to cover the parent link's underlining */
+#nav_primary > ul > li > a:before { bottom: 0; } /* ensures line will snap to bottom edge of item */
+#nav_primary ul ul                { left: -50%; }
+#nav_primary,
+#nav_primary > ul > li > a:before { left: 0; }
+#nav_primary ul ul                { opacity: 0; } /* sets the initial opacity of the dropdown menu to 0 so that we have the ability to animate the opacity to 1 during a hover of the parent li */
+#nav_primary > ul > li:hover > ul { opacity: 1; }
+#nav_primary > a                  { background: url(https://grooperguru.github.io/images/grooper_logo_214x70.png); } /*logo image used in navbar */
+#nav_primary > ul > li > a:before { content: ""; }
+#nav_primary .icheckbox::before   { opacity:0; }
+#nav_primary .icheckbox           { position:absolute; top: 0; right: -50px; opacity: 0; }
+
+
+/* 5.3 - Footer - 5.3 */
+footer li,
+.content__button input          { padding: 4px 0; }
+#footer_links input             { padding: 0 8px; }
+footer form                     { margin-top: 24px; }
+.field-wrapper,
+.content__button                { margin: 4px 0; }
+.field-wrapper,
+.content__button,
+#footer_links input             { height: 32px; }
+#footer_links input             { width: 100%; }
+#footer_links input             { border: none; }
+#footer_links                   {
+                                  max-width: 960px;
+                                  margin: 0 auto;
+                                }
+
+
+/* 5.3 - Social - 5.3 */
+.social                         { width: 100%; }
+.social a                       {
+                                  padding-top: 44px;
+                                  margin: 6px;
+                                  height: 128px;
+                                  width: 128px;
+                                  border: 1px solid rgba(255,255,255,.26);
+                                }
+.social a:nth-child(1):hover    { background: #3b5998; } /* facebook */
+.social a:nth-child(2):hover    { background: #dd4b39; } /* google plus */
+.social a:nth-child(3):hover    { background: #55acee; } /* twitter */
+.social a:nth-child(4):hover    { background: #0976b4; } /* linkedin */
+.social a:nth-child(5):hover    { background: #cd201f; } /* youtube */
+.fa                             { color: rgba(255,255,255,.26); }
+#copyright img                  { margin: 16px auto; }
+
+
+/* The btn-sml and btn-lrg classes are used on <a> elements to turn them into styled buttons in one of two sizes. */
+/* It is assumed that these will always be on a line by themselves and should be horizontally centered within the parent container */
+.btn-sml, .btn-lrg				{
+								  text-transform: uppercase;
+								  border-radius: 3px;
+								  border: 1px solid rgba(255,255,255,0.6);
+								  color: #ffffff;
+								  background: rgba(255,255,255,.066);
+								}
+.btn-sml                        { padding: 6px 12px; }
+.btn-lrg                        { padding: 16px 32px; }
+.btn-sml:hover, .btn-lrg:hover	{
+								-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
+								        box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
+								        background: rgba(255,255,255,0.97) !important;
+								             color: rgba(0,0,0,0.8) !important;
+								}
+
+
+
+/* TRANSFORMS AND TRANSITIONS */
+
+.noScroll                             {
+                                        overflow: hidden;
+                                        width: 100%;
+                                      }
+#nav_primary > ul > li > a:before     { /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale */
+																				-webkit-transform: scaleX(0);
+																				    -ms-transform: scaleX(0);
+																				        transform: scaleX(0);
+																			}
+#nav_primary > ul > li > a:hover:before { /* transforms primary nav underlines from the inside to the outside */
+																				-webkit-transform: scaleX(1);
+																				    -ms-transform: scaleX(1);
+																				        transform: scaleX(1);
+																			}
+footer .social a:hover                {
+																				-webkit-transform: scale(1.1);
+																				    -ms-transform: scale(1.1);
+																				        transform: scale(1.1);
+																			}
+
+#nav_primary > ul > li > a:before,
+#nav_primary ul ul,
+#nav_primary ul ul li,
+#nav_primary ul ul a,
+.btn-lrg, .btn-sml, .social a, .fa		{
+																				-webkit-transition: all 0.2s linear 0s !important;
+																				     -o-transition: all 0.2s linear 0s !important;
+																				        transition: all 0.2s linear 0s !important;
+																			}
+nav .social                           {
+																				-webkit-transition: all 0.3s linear !important;
+																				     -o-transition: all 0.3s linear !important;
+																				        transition: all 0.3s linear !important;
+																			}
+.no-transition												{
+																				-webkit-transition: none;
+																				     -o-transition: none;
+																				        transition: none;
+																			}
+
+
+/* Global Transitioning */
+    .Button {
+        transition: all 0.2s ease-out !important;
+        font-size: 12px;
+    }
+
+/* BUTTON STYLES */
+
+    /* Base setup for all buttons */
+    .Button { background: transparent; border: none; }
+    .Button:hover { background: #eeeeee !important; }
+
+
+    /* Search Button on Top Nav Bar */
+    .SearchButton       { background: #757575; }
+    .SearchButton:hover { background: #9e9e9e !important;}
+
+    /* Both search buttons within the advanced search page */
+    .AdvancedSearch .Button { }
+
+
+    /* All buttons in the main content (not the aside) and the .BigButton in the aside */
+    .Action, .FormWrapper .Primary, .BigButton, .Primary {
+        background: transparent;
+        color: #009688;
+        border: 1px solid #4db6ac;
+    }
+    .Action:hover, .FormWrapper .Primary:hover, .BigButton:hover, .ButtonGroup.Multi:hover .Button {
+        /*box-shadow: 2px 2px 4px #bdbdbd !important;*/
+        background: #4db6ac !important;
+        color: #f5f5f5 !important;
+    }
+
+    /* Controls buttons for New Idea, New Discussion Dropdown Combo, Post Comment, Post Discussion, Save Poll, Ask Question */
+    .Primary { }
+    .ButtonGroup.Multi .Button {
+        border: none;
+    }
+
+    /* This simultaneously address the new discussion button at the top of the discussion list and the big one in the aside */
+    .NewDiscussion .Button { }
+
+
+
+    /* This controls only the Preview, Write, and Draft buttons when posting a reply/comment  */
+    .FormWrapper a.Button { }
+
+    /* The Primary action buttons when creating or commenting on a post */
+    /* Thes are all also accessible in CSS using .Primary */
+    .DiscussionButton, .CommentButton, .PollButton { }
+
+    /*The secondary buttons when creating or commenting on a post */
+    .discussion-sorts .Button, .DraftButton, .PreviewButton, .WriteButton, .Cancel, .AddPollOption {
+        background: transparent;
+        border: none;
+        color: #757575;
+    }
+    .discussion-sorts .Button:hover {
+        background: #eeeeee !important;
+        color: #424242 !important;
+    }
+    .DraftButton:hover, .PreviewButton:hover, .WriteButton:hover, .Cancel:hover, .AddPollOption:hover {
+        background: #e0e0e0 !important;
+        color: #212121 !important;
+    }
+
+    /* Icons in comment editor */
+    .editor .icon:hover { background: #e0e0e0; }
+
+    /*optinal text editing buttons*/
+    .editor-optional-button { display: inline-block !important; }
+
+
+    /* The Hot, Top, and New Buttons on Dream Board + status filter dropdown button on the discussion list page */
+    /*
+    .NavButton {
+        background: #fafafa !important;
+    }
+    .NavButton {
+        color: #000000 !important;
+        background: #eeeeee !important;
+    }
+    */
+
+
+    .TagCloud li {
+        background/*-color*/: #ffffff !important;
+    }
+
+    /*page title color*/
+    h1 {color: #424242;}
+    .HasNew { background: #71dad2; }
+
+    .SpSearch {
+        color: #f5f5f5;
+    }
+
+    /* menu items are the dropdown lists for comment features like element selection */
+    .MenuItems a, .MenuItems a:link, .MenuItems a:visited, .MenuItems a:active { color: #757575 !important; }
+    .MenuItems a:hover { background: #eeeeee !important; color: #424242 !important;}
+
+    /*page currently being viewed*/
+    .Pager .Highlight {
+        color: #ffb300 !important;
+    }
+
+
+
+/*SET CONTAINER WIDTHS AND SPACING FOR LEFT/RIGHT SIDE*/
+
+    /*main.container, nav > .container, .trail, .termsofservice #content {*/
+    .container, /*footer, */.trail, .termsofservice #content {
+        width: 94%;
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .column-content, input#form_Search.InputBox, nav.navbar form > div, navbar form, .navbar > .container > form {
+        display: inline-block;
+        float: left;
+        width: calc(97% - 260px);
+        margin-right: 0 !important;
+    }
+    .column-sidebar, .navbar-right {
+        display: inline-block;
+        float: right;
+        width: 260px;
+    }
+    .trail {
+        margin-bottom: 16px;
+        margin-top: 16px;
+    }
+    .trail > .container{
+        margin-left:0px;
+    }
+    .navbar {
+        padding: 8px 0;
+    }
+    .navbar > .container > form > div {
+        display: inline-block;
+        white-space: normal;
+        width: 100% !important;
+    }
+
+    @media only screen and (max-width:720px) {
+    	section#container.container, .pusher.segmented {
+    	    min-height:100vh !important;
+        }
+        .header .navbar-brand {
+            display:none !important;
+        }
+    }
+
+    @media only screen and (max-width:1024px) {
+        .container, /*footer, */.trail, .termsofservice #content {
+            width: 96%;
+        }
+        .column-content, input#form_Search.InputBox, .navbar form > div, navbar form, .navbar > .container > form {
+            width: calc(98% - 206px) !important;
+        }
+        .column-sidebar, .navbar-right {
+            width: 206px;
+        }
+        .ButtonGroup .NavButton, .ButtonGroup .Button {
+            padding: 8px 16px !important;
+        }
+        .ButtonGroup.Multi > .Button:first-child {
+            width: calc(100% - 45px) !important;
+        }
+    }
+
+    @media only screen and (max-width:840px) {
+        .CategoryTable .CountComments {
+            display:none;
+        }
+        .column-sidebar{
+    	    display: none;
+    	}
+    	/*this makes the left column take up the full screen*/
+        .column-content/*, navbar form, .navbar > .container > form */{
+            width: 100% !important;
+        }
+    }
+    /* 11-13-2017 testing removing the side panel */
+    /*hide side panel when smaller than tablet sized screen*/
+    /*@media only screen and (max-width:720px) { }*/
+    /* phone change attemps*/
+    @media only screen and (max-width:600px) {
+        .navbar .mebox .PhotoWrap { /*nav bar menu*/
+            float: left !important;
+        }
+
+        .PhotoWrap .ProfilePhoto,
+        td.BigCount,
+        span.discussion-sorts, /*this removes the sort options on mobile except status sort*/
+        .QuickSearch, /*remove the tiny search icon next to the page count*/
+        .Button.DraftButton, /*removes the save draft button*/
+        .MessageList .Item:after,
+        .MessageList .Item:before, /* Hide the left hand arrows from each message/comment while on smallest screen sizes */{
+            display: none !important;
+        }
+        .MessageList .Item {
+            margin-left: 0px;
+        }
+        .Item-Header .AuthorInfo {
+            margin-left: 50px;
+        }
+        .ItemDiscussion .Message {
+            margin-top: 32px;
+        }
+        .CategoryDescription, .DataList .Item .Meta {
+            padding-right: 5px !important;
+        }
+        .Message p {
+            margin-top: 24px;
+        }
+        /* Make photo next to each post smaller while on mobile devices */
+        .Item-Header {
+            margin: 12px 0 0 0;
+            padding-left: 13px;
+        }
+        .ProfilePhotoMedium {
+            height: 48px;
+            width: 48px;
+        }
+        .Form-Header .Author .PhotoWrap, .MessageList .Item-Header .PhotoWrap {
+            margin: 16px 0 0 16px;
+        }
+    }
+
+
+/*SEARCH AND BUTTON*/
+    input#Form_Search.InputBox {
+        float: left;
+        width: calc(100% - 56px) !important;
+    }
+    .navbar .InputBox {
+        padding: 4px 16px;
+    }
+    .navbar .Button {
+        float: right;
+        padding: 4px 16px;
+    }
+    .navbar .button {
+        /*margin: 0;*/
+        margin: -2px 0;
+        /*padding: 4px 10px;*/
+    }
+    .ButtonGroup.Multi > .NavButton:first-child, .ButtonGroup.Multi > .Button:first-child, .NewDiscussion ul {
+        width: calc(100% - 42px);
+    }
+    .ButtonGroup .NavButton, .ButtonGroup .Button {
+        font-size: .8em;
+        padding: 8px 24px;
+    }
+    .ButtonGroup.Multi > .NavButton.Handle, .ButtonGroup.Multi > .Button.Handle {
+        border-left: 1px solid #4a83c3;
+        padding: 8px 13px;
+    }
+    .MenuItems a, .MenuItems a:link, .MenuItems a:visited, .MenuItems a:active {
+        line-height: 1.7em;
+    }
+
+
+
+
+
+/*ME MENU AND LOGIN*/
+    .UserBox .MeBox {
+        font-weight: bold;
+        vertical-align: top;
+        font-size: 14px;
+        font-color: #ffffff;
+        width: 100%;
+    }
+    .MeMenu { cursor: pointer; } /*keeps cursor from switching to text highlight between MeMenu buttons */
+    .MeMenu .Sprite, .MeBox .Username {
+        color: #e0e0e0;
+    }
+    .MeMenu .Sprite:hover, .MeBox .Username:hover, .MeButton:Hover .Sprite {
+        color: #ffffff;
+    }
+    .navbar-right > .mebox {
+        margin: 0;
+    }
+    /*hide username when on tablet sized screen*/
+    @media only screen and (max-width:1024px) {
+    	.mebox {
+    	    width: 160px;
+            margin: 0 auto !important;
+    	}
+    	.Username {
+            display: none;
+        }
+    }
+    @media only screen and (max-width:840px) {
+        .Username {
+            display: none;
+        }
+    }
+    .MeBox.Inline > .PhotoWrap .ProfilePhoto {
+        height: 32px;
+        width: 32px;
+    }
+    .MeBox.Inline, .MeBox.Inline .WhoIs, .MeBox.Inline .MeMenu {
+        min-height: 32px;
+        line-height: 32px;
+    }
+    .WhoIs { float: right; }
+
+
+
+/*ASIDE*/
+    .site-sidebar .Aside {
+        float: right;
+        margin-left: 8px;
+    }
+    ul.FilterMenu, ul.PanelCategories {
+        background: #ffffff;
+        border: 1px solid #f5f5f5;
+        padding: 4px 0;
+        width: 100%;
+        display: inline-block;
+    }
+    ul.FilterMenu li, ul.PanelCategories li {
+        padding: 8px 16px;
+        line-height: 1em;
+        border-top: none !important;
+        border-bottom: none !important;
+    }
+    ul.FilterMenu {
+        padding: 0 0 8px 0;
+        margin-top: 16px;
+    }
+    ul.PanelCategories {
+        margin-top: 4px;
+    }
+    .PanelCategories .Depth2 {
+        padding-left: 32px;
+    }
+    .Depth1 .Meta {
+        padding-top: 16px;
+    }
+    .CategoryDescription, .DataList .Item .Meta {
+        padding-right: 32px;
+    }
+
+    .site-sidebar h4, .site-sidebar h5, .site-sidebar h6 { margin-top: 0; margin-bottom: 0; }
+    .site-sidebar li a {
+        font-size: 0.85em;
+    }
+    ul.FilterMenu li a { width: 100%; float: left; padding-top: 8px; padding-bottom: 8px;}
+    .TagCloud li { padding: 2px 4px;}
+    .TagCloud li a { font-size: 0.65em; }
+    .Box.GuestBox { display: none; }
+    .GuestCountBox { font-size: .9em; }
+
+
+
+
+
+/*USER PROFILE PAGE*/
+    .Button-EditProfile { padding: 8px 12px !important; }
+    .Popup .Button {
+        background: transparent;
+        color: #009688;
+        border: 1px solid #4db6ac;
+    }
+    .Popup .Button:hover {
+        background: #4db6ac !important;
+        color: #f5f5f5;
+        box-shadow: 2px 2px 4px #bdbdbd !important;
+    }
+
+    .ProfilePhotoLarge {
+        width: 100%;
+        height: 100%;
+    }
+    .PhotoWrapLarge {
+        width: 100%;
+    }
+    .Profile .DataCounts .CountItem { min-width: 54px; }
+    @media only screen and (max-width:1024px) {
+        .UserBox .PhotoWrap, .MeBox .PhotoWrap {
+            margin-right: 0;
+            margin-left: 5px;
+        }
+        .MeBox, .mebox, .navbar .mebox .PhotoWrap {
+            float: right;
+        }
+        .CountLabel { font-size: .8em; }
+        .CountTotal { font-size: 1.3em; }
+    }
+
+
+
+
+
+/* CATEGORY LIST */
+    .Item {
+        background/*-color*/: #ffffff !important;
+    }
+    .CategoryList {
+        border: 1px solid #f5f5f5;
+        border-top: none;
+    }
+    .CategoryList .Depth1 {
+        border-top: 1px solid #f5f5f5;
+    }
+    .CategoryList .Depth2 {
+        padding: 0 16px 16px 125px !important;
+    }
+    /*Makes the width of the total views and replies columns as small as possible to maximize space for other columns*/
+
+
+
+
+
+
+/* FORUM DISCUSSION LIST AND TABLE */
+    .DiscussionsTable td.BigCount { width: 57px; }
+    .DataTable .BlockColumn-User { width: 12%; }
+    .DataTable td { vertical-align: top; }
+    @media only screen and (max-width:600px) {
+        .DataTable .PhotoWrap, .LastUser { display:none !important; }
+    }
+
+/* FORUM POSTS/COMMENTS */
+    .IPAddress { display: none; }
+
+    /* single comment in a Q&A thread which is marked as the "Accepted" answer */
+    .QnA-Item-Accepted { background-color: #f5f5f5 !important; box-shadow: 0 2px 24px rgba(0, 0, 0, 0.2);}
+
+
+
+/*REGISTRATION PAGE*/
+    .InputBox, .SmallInput, .TextBox, .token-input-list {
+        border-radius: 3px;
+    }
+    @media only screen and (max-width:1024px) {
+        .TextBoxWrapper .PasswordStrength {
+            width: 100%;
+        }
+        a#TermsOfService {
+            color: #26a69a;
+        }
+    }
+
+
+
+/*OTHER*/
+
+    h1.HomepageTitle { margin-top: 0; }
+/*
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 1.0em; }
+    h4 { font-size: 0.9em; }
+    a { color: #3E444E; }
+*/
+
+
+
+/*STOCK SETTINGS*/
+.masthead {
+    background/*-color*/: #ff9933;
+    background-size: cover;
+    background-image: url("http://media.gettyimages.com/photos/orange-eyes-picture-id90107760") !important;
+}
+
+.navbar {
+    background/*-color*/: #3E444E;
+    background-image: none !important;
+    background-size: cover;
+
+}
+/*
+ a:hover, a:focus {
+    color: #2eb2a8;
+    text-decoration: none;
+}
+*/
+span.MItem.RSS {
+    display: none !important
+}
+
+span.MItem.DateUpdated {
+    display: none !important
+}
+
+.DateUpdated {
+    display: none !important
+}
+
+div.BoxFilter.BoxBestOfFilter ul.FilterMenu {
+     list-style-type: none;
+     margin: 0px;
+     padding-bottom: 10px;
+}
+
+div.BoxFilter.BoxBestOfFilter li {
+    display: inline;
+    padding-left: 10px;
+}
+
+/* Image additions for Q&A */
+
+.QnA-Item-Accepted {
+    background-color: #eeeeee !important;
+}
+
+.Item.Role_Staff .MItem.RoleTitle {
+    color: transparent;
+    background: no-repeat url(https://static.v-cdn.net/demo/staff-tag.png);
+    content: " " !important;
+    width: 32px;
+    margin-left: 8px;
+}
+
+/* Staff Role comment background colour */
+
+.Item.Role_Staff {
+    background-color: #d8ecfc !important;
+}
+
+.navbar-brand{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.Section-Group .PhotoWrapLarge{
+    width: 140px;
+}
+
+.ProfilePhoto.ProfilePhotoMedium.Group-Icon{
+    height: 40px;
+    width: 40px;
+}
+
+.Section-BestOf .column-content {
+    width: 100%;
+}
+
+
+a.Username {
+    color: #ffffff;
+    font-color: #ffffff;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 1921px) {
+  #nav_primary                { padding-left: 10%; padding-right: 10%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+}
+
+@media only screen and (min-width: 2160px) {
+  #nav_primary                { padding-left: 13%; padding-right: 13%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+}
+
+@media only screen and (min-width: 2561px) {
+  #nav_primary                { padding-left: 15%; padding-right: 15%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+}
+
+
+@media only screen and (max-width: 1440px) {
+  html, body                  { font-size: 15px; }
+  .field-wrapper input        { font-size: 12px; }
+  .content__button input      { font-size: 14px; }
+  footer li                   { font-size: 16px; }
+  #footer_links input         { font-size: 14px; }
+  #copyright                  { font-size: 12px; }
+  .social a                   { font-size: 24px; }
+  .social a                   { padding-top: 32px; }
+  #footer_links input         { height: 28px; }
+  .social a                   { height: 96px; width: 96px; }
+  #copyright img              { height: 38px; }
+}
+
+
+@media only screen and (max-width: 1280px) {
+  html, body                  { font-size: 14px; }
+  #nav_primary ul ul a        { line-height: 42px; }
+  .social                     { margin: 72px auto 16px auto; }
+  #nav_primary > li           { height: 64px; } /* shrink to match the new height of the navbar */
+  #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
+  #nav_primary > a            { background: url(https://grooperguru.github.io/images/grooper_logo_140x46.png); height: 46px; width: 140px; }
+  #nav_primary ul ul          { top: 64px; }
+  .navbar                     { top: 64px !important; }
+  .navbar + div               { height: 117px !important; } /*temporary fix to move breadcrumb and main down below extra nav bar */
+}
+
+
+@media only screen and (max-width: 1024px) {
+  html, body                  { font-size: 13px; }
+  p                           { font-size: 15px; }
+  footer                      { padding: 64px 7% 8px 7%; }
+  .social a                   { padding-top: 32px; }
+  #nav_primary > ul > li > a  { margin: 0 8px; }
+  .social                     { margin: 64px auto 8px auto; }
+  #copyright img              { margin: 8px auto; }
+  .btn-sml                    { margin-top: 8px; }
+  .btn-lrg                    { padding: 8px 32px; }
+}
+
+
+@media (max-width: 768px) {
+  html, body                  { font-size: 12px; }
+  h1                          { font-size: 325%; }
+  h2                          { font-size: 300%; }
+  h4                          { font-size: 175%; }
+  footer,
+  footer h4, footer ul        { text-align: center; }
+  #footer_links > div         { padding: 32px 0; }
+  #signup                     { margin: 32px 32px 0 32px; }
+  #contact, #discover         { -webkit-flex-basis: 50% !important;  -ms-flex-preferred-size: 50% !important;  flex-basis: 50% !important }
+  #signup                     { -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
+  #nav_primary > a            {
+                                background: url(https://grooperguru.github.io/images/g_color_32.png);
+                                height: 32px;
+                                width: 33px;
+                              }
+}
+
+
+@media (max-width: 600px){
+  html, body                    { font-size: 11px; }
+  footer h4                     { font-size: 28px; }
+  footer li                     { font-size: 18px; }
+  #nav_primary > ul > li > a    { font-size: 18px; } /*  increase from 16px to 18px now that this is in a full screen mobile style menu */
+  #nav_primary > ul > li > a    { line-height: 48px; }
+  footer h4, footer ul          { text-align: center; }
+  #nav_primary li,
+  #nav_primary input            { display: block !important; }
+  #nav_primary ul, .social      {
+                                  display: -webkit-box !important;
+                                  display: -webkit-flex !important;
+                                  display: -ms-flexbox !important;
+                                  display: flex !important;
+                                }
+  #nav_primary div input:checked ~ i ~ i,
+  #nav_primary .fa-bars         {
+                                  display: -webkit-inline-box !important;
+                                  display: -webkit-inline-flex !important;
+                                  display: -ms-inline-flexbox !important;
+                                  display: inline-flex !important;
+                                }
+  #nav_primary div input:checked ~ i,
+  #nav_primary ul ul            { display: none !important; }
+  .social .fa                   { display: inline-block !important; }
+/*  #nav_primary input            { position: absolute !important; }*/
+  #nav_primary > ul, nav .social{ position: fixed !important; }
+  #nav_primary > ul             {
+                                     -webkit-box-orient: vertical !important;
+                                  -webkit-box-direction: normal !important;
+                                     -ms-flex-direction: column !important;
+                                         flex-direction: column !important;
+                                }
+  #nav_primary > ul, .social    { -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
+  #nav_primary > ul             { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+  #contact, #discover           { -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
+  #signup                       { margin: 0; }
+  .social                       { margin: 8px 0 16px; }
+  #nav_primary .social          { margin: 0; }
+  #nav_primary ul, nav .social  { margin-left: 100%; }
+  #nav_primary div.checked ~ ul{ margin-left: -5%; }
+  #nav_primary ul               { padding: 48px 0 64px; }
+  #nav_primary i, .social a     { padding: 0 !important; }
+  footer .social a              { padding-top: 0; }
+  #nav_primary input            { height: 100%; }
+  #nav_primary ul               { height: 100%; }
+  #nav_primary, nav > ul > li   { height: auto; }
+  #nav_primary, #brands img     { height: 48px; }
+  #nav_primary li               { max-height: 14%; } /* ensures all line items fit on the screen, even on devices with less height */
+  #nav_primary input            { width: 100%; }
+  #nav_primary, nav ul          { width: 100%; }
+  .social a                     { height: auto; }
+  .social a                     { width: auto; }
+  #nav_primary input, nav > ul  { top: 0; }
+  #nav_primary input            { right: 0; }
+  #nav_primary .social          { bottom: 16px; }
+  #nav_primary > ul             { background: #000; }
+  #nav_primary .social          { background: transparent; }
+  .social a                     { border: none; }
+  footer .social a,
+  footer .social a:hover        {
+									background: transparent;
+									-webkit-box-shadow: none;
+									        box-shadow: none;
+									-webkit-transform: none;
+									    -ms-transform: none;
+									        transform: none;
+								}
+  #nav_primary > ul             { opacity: 0.93; }
+  #nav_primary                  { -webkit-font-smoothing: antialiased; } /* to stop flickering of text in safari */
+  #nav_primary > a              {
+								-webkit-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+								     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+								        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+                                }
+  .social a:hover               { background: transparent !important; }
+  .social a:hover i             { color: rgba(255,255,255,.86); }
+
+  #nav_primary .icheckbox       { top: 0; right: 0; width:15%; height: 100%; z-index: 20000;}
+  #nav_primary .icheckbox::before { height: 100%; width: 100%;}
+  .navbar                       { top: 48px !important; }
+  .navbar + div                 { height: 101px !important; } /*temporary fix to move breadcrumb and main down below extra nav bar */
+}

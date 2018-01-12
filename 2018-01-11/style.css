@@ -1,0 +1,592 @@
+:root{
+    /* PANELS */
+    --body-s  : 600px;
+    --body-m  : 768px;
+    --body-l  : 1024px;
+    --body-xl : 1600px;
+    --aside-l : 206px;
+    --aside-xl: 260px;
+
+    /* MARGINS AND PADDING */
+    --pad-xxs : 2px;
+    --pad-xs  : 4px;
+    --pad-s   : 8px;
+    --pad-m   : 16px;
+    --pad-l   : 24px;
+    --pad-xl  : 32px;
+    --pad-xxl : 40px;
+    --pad-xxxl: 48px;
+
+    /* BASED ON GOOGLE DARK ORANGE */
+    --sec-med : #f7941d;
+    --sec-050 : #fbe9e7; --sec-100 : #ffccbc; --sec-200 : #ffab91; --sec-300 : #ff8a65; --sec-400 : #ff7043;
+    --sec-500 : #ff5722; --sec-600 : #f4511e; --sec-700 : #e64a19; --sec-800 : #d84315; --sec-900 : #bf360c;
+
+    /* BASED ON GOOGLE TEAL */
+    --pri-lit : #71dad2;
+    --pri-mlt : #42b8ae;
+    --pri-med : #2eb2a8;
+    --pri-drk : #258e85;
+    --pri-025 : #f5faf9;
+    --pri-050 : #e0f2f1; --pri-100 : #b2dfdb; --pri-200 : #80cbc4; --pri-300 : #4db6ac; --pri-400 : #26a69a;
+    --pri-500 : #009688; --pri-600 : #00897b; --pri-700 : #00796b; --pri-800 : #00695c; --pri-900 : #004d40;
+
+    /* BASED ON GOOGLE GRAY */
+    --gry-000 : #ffffff;
+    --gry-350 : #cccccc;
+    --gry-1000: #000000;
+    --gry-050 : #fafafa; --gry-100 : #f5f5f5; --gry-200 : #eeeeee; --gry-300 : #e0e0e0; --gry-400 : #bdbdbd;
+    --gry-500 : #9e9e9e; --gry-600 : #757575; --gry-700 : #616161; --gry-800 : #424242; --gry-900 : #212121;
+
+}
+
+body {
+    background: #fbfdfe !important;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Global Transitioning */
+    .Button {
+        transition: all 0.2s ease-out !important;
+        font-size: 12px;
+    }
+
+/* BUTTON STYLES */
+
+    /* Base setup for all buttons */
+    .Button { background: transparent; border: none; }
+    .Button:hover { background: var(--gry-200) !important; }
+
+
+    /* Search Button on Top Nav Bar */
+    .SearchButton       { background: var(--gry-600); }
+    .SearchButton:hover { background: var(--gry-500) !important;}
+
+    /* Both search buttons within the advanced search page */
+    .AdvancedSearch .Button { }
+
+
+    /* All buttons in the main content (not the aside) and the .BigButton in the aside */
+    .Action, .FormWrapper .Primary, .BigButton, .Primary {
+        background: transparent;
+        color: var(--pri-500);
+        border: 1px solid var(--pri-300);
+    }
+    .Action:hover, .FormWrapper .Primary:hover, .BigButton:hover, .ButtonGroup.Multi:hover .Button {
+        box-shadow: 2px 2px 4px var(--gry-400) !important;
+        background: var(--pri-300) !important;
+        color: var(--gry-100) !important;
+    }
+
+    /* Controls buttons for New Idea, New Discussion Dropdown Combo, Post Comment, Post Discussion, Save Poll, Ask Question */
+    .Primary { }
+    .ButtonGroup.Multi .Button {
+        border: none;
+    }
+
+    /* This simultaneously address the new discussion button at the top of the discussion list and the big one in the aside */
+    .NewDiscussion .Button { }
+
+
+
+    /* This controls only the Preview, Write, and Draft buttons when posting a reply/comment  */
+    .FormWrapper a.Button { }
+
+    /* The Primary action buttons when creating or commenting on a post */
+    /* Thes are all also accessible in CSS using .Primary */
+    .DiscussionButton, .CommentButton, .PollButton { }
+
+    /*The secondary buttons when creating or commenting on a post */
+    .discussion-sorts .Button, .DraftButton, .PreviewButton, .WriteButton, .Cancel, .AddPollOption {
+        background: transparent;
+        border: none;
+        color: var(--gry-600);
+    }
+    .discussion-sorts .Button:hover {
+        background: var(--gry-200) !important;
+        color: var(--gry-800) !important;
+    }
+    .DraftButton:hover, .PreviewButton:hover, .WriteButton:hover, .Cancel:hover, .AddPollOption:hover {
+        background: var(--gry-300) !important;
+        color: var(--gry-900) !important;
+    }
+
+    /* Icons in comment editor */
+    .editor .icon:hover { background: var(--gry-300); }
+
+    /*optinal text editing buttons*/
+    .editor-optional-button { display: inline-block !important; }
+
+
+    /* The Hot, Top, and New Buttons on Dream Board + status filter dropdown button on the discussion list page */
+    /*
+    .NavButton {
+        background: var(--gry-050) !important;
+    }
+    .NavButton {
+        color: var(--gry-1000) !important;
+        background: var(--gry-200) !important;
+    }
+    */
+
+
+    .TagCloud li {
+        background/*-color*/: var(--gry-000) !important;
+    }
+
+    /*page title color*/
+    h1 {color: var(--gry-800);}
+    .HasNew { background: var(--pri-lit); }
+
+    .SpSearch {
+        color: var(--gry-100);
+    }
+    .MenuItems a:hover {
+        background: var(--pri-med) !important;
+    }
+
+
+    /*page currently being viewed*/
+    .Pager .Highlight {
+        color: #ffb300 !important;
+    }
+
+
+
+/*SET CONTAINER WIDTHS AND SPACING FOR LEFT/RIGHT SIDE*/
+
+    /*main.container, nav > .container, .trail, .termsofservice #content {*/
+    .container, footer, .trail, .termsofservice #content {
+        width: 94%;
+        max-width: var(--body-xl);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .column-content, input#form_Search.InputBox, nav.navbar form > div, navbar form, .navbar > .container > form {
+        display: inline-block;
+        float: left;
+        width: calc(97% - var(--aside-xl));
+        margin-right: 0 !important;
+    }
+    .column-sidebar, .navbar-right {
+        display: inline-block;
+        float: right;
+        width: var(--aside-xl);
+    }
+    .trail {
+        margin-bottom: var(--pad-m);
+        margin-top: var(--pad-m);
+    }
+    .trail > .container{
+        margin-left:0px;
+    }
+    .navbar {
+        padding: var(--pad-s) 0;
+    }
+    .navbar > .container > form > div {
+        display: inline-block;
+        white-space: normal;
+        width: 100% !important;
+    }
+
+    @media only screen and (max-width:720px) {
+    	section#container.container, .pusher.segmented {
+    	    min-height:100vh !important;
+        }
+        .header .navbar-brand {
+            display:none !important;
+        }
+    }
+
+    @media only screen and (max-width:1024px) {
+        .container, footer, .trail, .termsofservice #content {
+            width: 96%;
+        }
+        .column-content, input#form_Search.InputBox, .navbar form > div, navbar form, .navbar > .container > form {
+            width: calc(98% - var(--aside-l)) !important;
+        }
+        .column-sidebar, .navbar-right {
+            width: var(--aside-l);
+        }
+        .ButtonGroup .NavButton, .ButtonGroup .Button {
+            padding: var(--pad-s) var(--pad-m) !important;
+        }
+        .ButtonGroup.Multi > .Button:first-child {
+            width: calc(100% - 45px) !important;
+        }
+    }
+
+    @media only screen and (max-width:840px) {
+        .CategoryTable .CountComments {
+            display:none;
+        }
+        .column-sidebar{
+    	    display: none;
+    	}
+    	/*this makes the left column take up the full screen*/
+        .column-content/*, navbar form, .navbar > .container > form */{
+            width: 100% !important;
+        }
+    }
+    /* 11-13-2017 testing removing the side panel */
+    /*hide side panel when smaller than tablet sized screen*/
+    /*@media only screen and (max-width:720px) { }*/
+    /* phone change attemps*/
+    @media only screen and (max-width:600px) {
+        .navbar .mebox .PhotoWrap { /*nav bar menu*/
+            float: left !important;
+        }
+
+        .PhotoWrap .ProfilePhoto,
+        td.BigCount,
+        span.discussion-sorts, /*this removes the sort options on mobile except status sort*/
+        .QuickSearch, /*remove the tiny search icon next to the page count*/
+        .Button.DraftButton, /*removes the save draft button*/
+        .MessageList .Item:after,
+        .MessageList .Item:before, /* Hide the left hand arrows from each message/comment while on smallest screen sizes */{
+            display: none !important;
+        }
+        .MessageList .Item {
+            margin-left: 0px;
+        }
+        .Item-Header .AuthorInfo {
+            margin-left: 50px;
+        }
+        .ItemDiscussion .Message {
+            margin-top: var(--pad-xl);
+        }
+        .CategoryDescription, .DataList .Item .Meta {
+            padding-right: 5px !important;
+        }
+        .Message p {
+            margin-top: var(--pad-l);
+        }
+        /* Make photo next to each post smaller while on mobile devices */
+        .Item-Header {
+            margin: 12px 0 0 0;
+            padding-left: 13px;
+        }
+        .ProfilePhotoMedium {
+            height: var(--pad-xxxl);
+            width: var(--pad-xxxl);
+        }
+        .Form-Header .Author .PhotoWrap, .MessageList .Item-Header .PhotoWrap {
+            margin: var(--pad-m) 0 0 var(--pad-m);
+        }
+    }
+
+
+/*SEARCH AND BUTTON*/
+    input#Form_Search.InputBox {
+        float: left;
+        width: calc(100% - 56px) !important;
+    }
+    .navbar .InputBox {
+        padding: var(--pad-xs) var(--pad-m);
+    }
+    .navbar .Button {
+        float: right;
+        padding: var(--pad-xs) var(--pad-m);
+    }
+    .navbar .button {
+        /*margin: 0;*/
+        margin: -2px 0;
+        /*padding: var(--pad-xs) 10px;*/
+    }
+    .ButtonGroup.Multi > .NavButton:first-child, .ButtonGroup.Multi > .Button:first-child, .NewDiscussion ul {
+        width: calc(100% - 42px);
+    }
+    .ButtonGroup .NavButton, .ButtonGroup .Button {
+        font-size: .8em;
+        padding: var(--pad-s) var(--pad-l);
+    }
+    .ButtonGroup.Multi > .NavButton.Handle, .ButtonGroup.Multi > .Button.Handle {
+        border-left: 1px solid #4a83c3;
+        padding: var(--pad-s) 13px;
+    }
+    .MenuItems a, .MenuItems a:link, .MenuItems a:visited, .MenuItems a:active {
+        line-height: 1.7em;
+    }
+
+
+
+
+
+/*ME MENU AND LOGIN*/
+    .UserBox .MeBox {
+        font-weight: bold;
+        vertical-align: top;
+        font-size: 14px;
+        font-color: var(--gry-000);
+        width: 100%;
+    }
+    .MeMenu { cursor: pointer; } /*keeps cursor from switching to text highlight between MeMenu buttons */
+    .MeMenu .Sprite, .MeBox .Username {
+        color: var(--gry-300);
+    }
+    .MeMenu .Sprite:hover, .MeBox .Username:hover, .MeButton:Hover .Sprite {
+        color: var(--gry-000);
+    }
+    .navbar-right > .mebox {
+        margin: 0;
+    }
+    /*hide username when on tablet sized screen*/
+    @media only screen and (max-width:1024px) {
+    	.mebox {
+    	    width: 160px;
+            margin: 0 auto !important;
+    	}
+    	.Username {
+            display: none;
+        }
+    }
+    @media only screen and (max-width:840px) {
+        .Username {
+            display: none;
+        }
+    }
+    .MeBox.Inline > .PhotoWrap .ProfilePhoto {
+        height: var(--pad-xl);
+        width: var(--pad-xl);
+    }
+    .MeBox.Inline, .MeBox.Inline .WhoIs, .MeBox.Inline .MeMenu {
+        min-height: var(--pad-xl);
+        line-height: var(--pad-xl);
+    }
+    .WhoIs { float: right; }
+
+
+
+/*ASIDE*/
+    .site-sidebar .Aside {
+        float: right;
+        margin-left: var(--pad-s);
+    }
+    ul.FilterMenu, ul.PanelCategories {
+        background: var(--gry-000);
+        border: 1px solid var(--gry-100);
+        padding: var(--pad-xs) 0;
+        width: 100%;
+        display: inline-block;
+    }
+    ul.FilterMenu li, ul.PanelCategories li {
+        padding: var(--pad-s) var(--pad-m);
+        line-height: 1em;
+        border-top: none !important;
+        border-bottom: none !important;
+    }
+    ul.FilterMenu {
+        padding: 0 0 var(--pad-s) 0;
+        margin-top: var(--pad-m);
+    }
+    ul.PanelCategories {
+        margin-top: var(--pad-xs);
+    }
+    .PanelCategories .Depth2 {
+        padding-left: var(--pad-xl);
+    }
+    .Depth1 .Meta {
+        padding-top: var(--pad-m);
+    }
+    .CategoryDescription, .DataList .Item .Meta {
+        padding-right: var(--pad-xl);
+    }
+
+    .site-sidebar h4, .site-sidebar h5, .site-sidebar h6 { margin-top: 0; margin-bottom: 0; }
+    .site-sidebar li a {
+        font-size: 0.85em;
+    }
+    ul.FilterMenu li a { width: 100%; float: left; padding-top: var(--pad-s); padding-bottom: var(--pad-s);}
+    .TagCloud li { padding: var(--pad-xxs) var(--pad-xs);}
+    .TagCloud li a { font-size: 0.65em; }
+    .Box.GuestBox { display: none; }
+    .GuestCountBox { font-size: .9em; }
+
+
+
+
+
+/*USER PROFILE PAGE*/
+    .Button-EditProfile { padding: var(--pad-s) 12px !important; }
+    .Popup .Button {
+        background: transparent;
+        color: var(--pri-500);
+        border: 1px solid var(--pri-300);
+    }
+    .Popup .Button:hover {
+        background: var(--pri-300) !important;
+        color: var(--gry-100);
+        box-shadow: 2px 2px 4px var(--gry-400) !important;
+    }
+
+    .ProfilePhotoLarge {
+        width: 100%;
+        height: 100%;
+    }
+    .PhotoWrapLarge {
+        width: 100%;
+    }
+    .Profile .DataCounts .CountItem { min-width: 54px; }
+    @media only screen and (max-width:1024px) {
+        .UserBox .PhotoWrap, .MeBox .PhotoWrap {
+            margin-right: 0;
+            margin-left: 5px;
+        }
+        .MeBox, .mebox, .navbar .mebox .PhotoWrap {
+            float: right;
+        }
+        .CountLabel { font-size: .8em; }
+        .CountTotal { font-size: 1.3em; }
+    }
+
+
+
+
+
+/* CATEGORY LIST */
+    .Item {
+        background/*-color*/: #ffffff !important;
+    }
+    .CategoryList {
+        border: 1px solid var(--gry-100);
+        border-top: none;
+    }
+    .CategoryList .Depth1 {
+        border-top: 1px solid var(--gry-100);
+    }
+    .CategoryList .Depth2 {
+        padding: 0 var(--pad-m) var(--pad-m) 125px !important;
+    }
+    /*Makes the width of the total views and replies columns as small as possible to maximize space for other columns*/
+
+
+
+
+
+
+/* FORUM DISCUSSION LIST AND TABLE */
+    .DiscussionsTable td.BigCount { width: 57px; }
+    .DataTable .BlockColumn-User { width: 12%; }
+    .DataTable td { vertical-align: top; }
+    @media only screen and (max-width:600px) {
+        .DataTable .PhotoWrap, .LastUser { display:none !important; }
+    }
+
+/* FORUM POSTS/COMMENTS */
+    .IPAddress { display: none; }
+
+
+
+
+/*REGISTRATION PAGE*/
+    .InputBox, .SmallInput, .TextBox, .token-input-list {
+        border-radius: 3px;
+    }
+    @media only screen and (max-width:1024px) {
+        .TextBoxWrapper .PasswordStrength {
+            width: 100%;
+        }
+        a#TermsOfService {
+            color: var(--pri-400);
+        }
+    }
+
+
+
+/*OTHER*/
+    h1.HomepageTitle { margin-top: 0; }
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 1.0em; }
+    h4 { font-size: 0.9em; }
+    a { color: #3E444E; }
+
+
+
+
+/*STOCK SETTINGS*/
+.masthead {
+    background/*-color*/: #ff9933;
+    background-size: cover;
+    background-image: url("http://media.gettyimages.com/photos/orange-eyes-picture-id90107760") !important;
+}
+
+.navbar {
+    background/*-color*/: #3E444E;
+    background-image: none !important;
+    background-size: cover;
+
+}
+
+ a:hover, a:focus {
+    color: var(--pri-med);
+    text-decoration: none;
+}
+
+span.MItem.RSS {
+    display: none !important
+}
+
+span.MItem.DateUpdated {
+    display: none !important
+}
+
+.DateUpdated {
+    display: none !important
+}
+
+div.BoxFilter.BoxBestOfFilter ul.FilterMenu {
+     list-style-type: none;
+     margin: 0px;
+     padding-bottom: 10px;
+}
+
+div.BoxFilter.BoxBestOfFilter li {
+    display: inline;
+    padding-left: 10px;
+}
+
+/* Image additions for Q&A */
+
+.QnA-Item-Accepted {
+    background-color: var(--gry-200) !important;
+}
+
+.Item.Role_Staff .MItem.RoleTitle {
+    color: transparent;
+    background: no-repeat url(https://static.v-cdn.net/demo/staff-tag.png);
+    content: " " !important;
+    width: var(--pad-xl);
+    margin-left: var(--pad-s);
+}
+
+/* Staff Role comment background colour */
+
+.Item.Role_Staff {
+    background-color: #d8ecfc !important;
+}
+
+.navbar-brand{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.Section-Group .PhotoWrapLarge{
+    width: 140px;
+}
+
+.ProfilePhoto.ProfilePhotoMedium.Group-Icon{
+    height: var(--pad-xxl);
+    width: var(--pad-xxl);
+}
+
+.Section-BestOf .column-content {
+    width: 100%;
+}
+
+
+a.Username {
+    color: var(--gry-000);
+    font-color: var(--gry-000);
+}
