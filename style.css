@@ -10,22 +10,25 @@ body                            { line-height: normal; }
 .navbar + div                   { height: 149px !important; } /*temporary fix to move breadcrumb and main down below extra nav bar */
 
 /* 1.3 - Eliminate default input button styles imposed by browsers like safari - 1.3 */
-input, button					{
+/*input, button					{
                                   -webkit-appearance: none;
                                   -moz-appearance: none;
                                   appearance: none;
                                   border-radius: 0px;
                                   height: 36px;
                                 }
-
+*/
 
 /* 1.4 - Cursor and Touch - 1.4 */
 i, nav ul, nav ul a,
 .btn-sml, .btn-lrg,
-.social, .social a              { cursor: default; }
-nav input                       { cursor: pointer; }
-nav input                       { -webkit-touch-callout: none; }
-button:focus                    { outline: 0; }
+.social, .social a,
+.Buttons                        { cursor: default; }
+#nav_primary input              { cursor: pointer; }
+#nav_primary input              { -webkit-touch-callout: none; }
+button:focus, a:focus,
+button:active, a:active,
+.Button                         { outline: 0; }
 
 
 
@@ -101,8 +104,10 @@ thead, th, i                    { font-weight: 500; }
 
 /* 2.7 - Color - 2.7 */
 p                               { color: rgba(17,17,17,.7); }
-a:link, a:visited               { color: #424242; }
-a:hover, a:active               { color: #212121; }
+a:not(.Button),
+a:not(.Button):visited          { color: #424242; }
+a:not(.Button):hover,
+a:not(.Button):active           { color: #212121; }
 h1, footer h4,
 #footer_links a:hover,
 #footer_links label             { color: #fff; }
@@ -148,6 +153,7 @@ p                               { line-height: 1.5em; }
 main li                         { line-height: 1.3em; } /* important to use main li so we do not impact the lists for navigation and footer */
 #nav_primary > ul > li > a      { line-height: 36px; } /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
 .CategoryDescription            { line-height: 1.5em; }
+li p                            { line0height: 1em; }
 
 /* 2.9.2 - Lists - 2.9.2 */
 footer ul                       { list-style: none; }
@@ -424,36 +430,106 @@ nav .social                           {
 
 /* BUTTON STYLES */
 
+/*
+.Button, .Button:hover, .Button:focus, .Button:active {
+    text-shadow: none;
+    border-color: transparent;
+}
+.button:hover, .button:focus, .button:active, .Button:hover, .Button:focus, .Button:active {
+    color: #fff;
+    background-color: #2498f7;
+    background-position: 0 -15px;
+}
+.button, .button:hover, .button:focus, .Button, .Button:hover, .Button:focus {
+    text-decoration: none;
+*/
+
+
+
     /* Base setup for all buttons */
-    .Button { background: transparent; border: none; }
-    .Button:hover { background: #eeeeee !important; }
+    .Button                                      { background: transparent; border: none; }
+    .Button:hover, .Button:focus, .Button:active { background: #eeeeee !important; }
+
+    /* Login and Register buttons on the top nav when somebody is not logged in */
+    .navbar .button                              {
+                                                   background-color: #009688;
+                                                   background-image: none;
+                                                   color: #f5f5f5;
+                                                   margin: -2px 0;
+                                                 }
+    .navbar .Button                              { float: right; /*padding: 4px 16px;*/}
 
 
     /* Search Button on Top Nav Bar */
-    .SearchButton       { background: #757575; }
-    .SearchButton:hover { background: #9e9e9e !important;}
+    .SearchButton                                {
+                                                   background: #757575;
+                                                   font-size: 16px;
+                                                   padding: 7px 16px;
+                                                 }
+    .SearchButton:hover, .SearchButton:focus,
+    .SearchButton:active                         { background: #9e9e9e !important;}
 
     /* Both search buttons within the advanced search page */
     .AdvancedSearch .Button { }
 
 
     /* All buttons in the main content (not the aside) and the .BigButton in the aside */
-    .Action, .FormWrapper .Primary, .BigButton, .Primary {
+    .Action, /*.FormWrapper .Primary,*/ .BigButton, .Primary {
         background: transparent;
         color: #009688;
         border: 1px solid #4db6ac;
     }
-    .Action:hover, .FormWrapper .Primary:hover, .BigButton:hover, .ButtonGroup.Multi:hover .Button {
-        /*box-shadow: 2px 2px 4px #bdbdbd !important;*/
+    .Action:hover, .Primary:hover, .BigButton:hover, .ButtonGroup.Multi:hover .Button,
+    .Action:focus, .Primary:focus, .BigButton:focus, .ButtonGroup.Multi:focus .Button,
+    .Action:active, .Primary:active, .BigButton:active, .ButtonGroup.Multi:active .Button {
         background: #4db6ac !important;
         color: #f5f5f5 !important;
     }
 
+    .ButtonGroup.Multi .Button { border: none; }
+
+    /*The secondary buttons when creating or commenting on a post */
+    .discussion-sorts .Button, .DraftButton, .PreviewButton, .WriteButton, .Cancel, .AddPollOption {
+        background: transparent;
+        border: none;
+        color: #757575;
+    }
+    .discussion-sorts .Button:hover, .discussion-sorts .Button:focus, .discussion-sorts .Button:active {
+        background: #eeeeee !important;
+        color: #424242 !important;
+    }
+    .DraftButton:hover, .PreviewButton:hover, .WriteButton:hover, .Cancel:hover, .AddPollOption:hover,
+    .DraftButton:focus, .PreviewButton:focus, .WriteButton:focus, .Cancel:focus, .AddPollOption:focus,
+    .DraftButton:active, .PreviewButton:active, .WriteButton:active, .Cancel:active, .AddPollOption:active {
+        background: #e0e0e0 !important;
+        color: #212121 !important;
+    }
+
+    .ButtonGroup.Multi > .NavButton:first-child, .ButtonGroup.Multi > .Button:first-child, .NewDiscussion ul {
+        width: calc(100% - 42px);
+    }
+    .ButtonGroup .NavButton, .ButtonGroup .Button {
+        font-size: .8em;
+        padding: 8px 24px;
+    }
+    .ButtonGroup.Multi > .NavButton.Handle, .ButtonGroup.Multi > .Button.Handle {
+        border-left: 1px solid #4db6ac;
+        border-radius: 0;
+        padding: 8px 14px;
+    }
+    .ButtonGroup.Multi:hover > .NavButton.Handle, .ButtonGroup.Multi:hover > .Button.Handle,
+    .ButtonGroup.Multi:focus > .NavButton.Handle, .ButtonGroup.Multi:focus > .Button.Handle,
+    .ButtonGroup.Multi:active > .NavButton.Handle, .ButtonGroup.Multi:active > .Button.Handle {
+        border-left: 1px solid #f5f5f5;
+    }
+    .ButtonGroup.Multi > .NavButton:first-child, .ButtonGroup.Multi > .Button:first-child {
+        border-radius: 0;
+    }
+
+
+
     /* Controls buttons for New Idea, New Discussion Dropdown Combo, Post Comment, Post Discussion, Save Poll, Ask Question */
     .Primary { }
-    .ButtonGroup.Multi .Button {
-        border: none;
-    }
 
     /* This simultaneously address the new discussion button at the top of the discussion list and the big one in the aside */
     .NewDiscussion .Button { }
@@ -467,26 +543,12 @@ nav .social                           {
     /* Thes are all also accessible in CSS using .Primary */
     .DiscussionButton, .CommentButton, .PollButton { }
 
-    /*The secondary buttons when creating or commenting on a post */
-    .discussion-sorts .Button, .DraftButton, .PreviewButton, .WriteButton, .Cancel, .AddPollOption {
-        background: transparent;
-        border: none;
-        color: #757575;
-    }
-    .discussion-sorts .Button:hover {
-        background: #eeeeee !important;
-        color: #424242 !important;
-    }
-    .DraftButton:hover, .PreviewButton:hover, .WriteButton:hover, .Cancel:hover, .AddPollOption:hover {
-        background: #e0e0e0 !important;
-        color: #212121 !important;
-    }
 
     /* Icons in comment editor */
     .editor .icon:hover { background: #e0e0e0; }
 
     /*optinal text editing buttons*/
-    .editor-optional-button { display: inline-block !important; }
+    /*.editor-optional-button { display: inline-block !important; }*/
 
 
     /* The Hot, Top, and New Buttons on Dream Board + status filter dropdown button on the discussion list page */
@@ -647,35 +709,48 @@ nav .social                           {
     }
 
 
+/* POPUP WINDOWS */
+    div.Popup .Border           {
+                                  box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+                                  padding: 24px;
+                                  border-radius: 3px;
+                                  background: #fff;
+                                }
+    div.Popup .Body             { padding: 16px; }
+    div.Popup .Content h1       { font-size: 175%; }
+    .Popup .Buttons             { margin-top: 16px; }
+    .Popup .Button              {
+                                  background: transparent;
+                                  color: #009688;
+                                  border: 1px solid #4db6ac;
+                                }
+    .Popup .Button:hover        {
+                                  background: #4db6ac !important;
+                                  color: #f5f5f5;
+                                  box-shadow: 1px 1px 4px #e0e0e0 !important;
+                                }
+    .Popup .Buttons .Close      {
+                                  background: #eeeeee;
+                                  border: 1px solid #eeeeee;
+                                  color: #757575;
+                                }
+    .Popup .Buttons .Close:hover{
+                                  background: #e0e0e0 !important;
+                                  border: 1px solid #e0e0e0;
+                                  color: #424242;
+                                }
+
+
 /*SEARCH AND BUTTON*/
     input#Form_Search.InputBox {
         float: left;
         width: calc(100% - 56px) !important;
     }
-    .navbar .InputBox {
-        padding: 4px 16px;
+    input.InputBox {
+        font-size: 14px;
+        padding: 6px 16px;
     }
-    .navbar .Button {
-        float: right;
-        padding: 4px 16px;
-    }
-    .navbar .button {
-        /*margin: 0;*/
-        margin: -2px 0;
-        /*padding: 4px 10px;*/
-    }
-    .ButtonGroup.Multi > .NavButton:first-child, .ButtonGroup.Multi > .Button:first-child, .NewDiscussion ul {
-        width: calc(100% - 42px);
-    }
-    .ButtonGroup .NavButton, .ButtonGroup .Button {
-        font-size: .8em;
-        padding: 8px 24px;
-    }
-    .ButtonGroup.Multi > .NavButton.Handle, .ButtonGroup.Multi > .Button.Handle {
-        border-left: 1px solid #4a83c3;
-        padding: 8px 13px;
-    }
-    .MenuItems a, .MenuItems a:link, .MenuItems a:visited, .MenuItems a:active {
+    .MenuItems a, .MenuItems a:link, .MenuItems a:visited, .MenuItems a:focus, .MenuItems a:active {
         line-height: 1.7em;
     }
 
@@ -692,11 +767,9 @@ nav .social                           {
         width: 100%;
     }
     .MeMenu { cursor: pointer; } /*keeps cursor from switching to text highlight between MeMenu buttons */
-    .MeMenu .Sprite, .MeBox .Username {
-        color: #e0e0e0;
-    }
+    .MeMenu .Sprite, .MeBox .Username { color: #e0e0e0 !important; }
     .MeMenu .Sprite:hover, .MeBox .Username:hover, .MeButton:Hover .Sprite {
-        color: #ffffff;
+        color: #ffffff !important;
     }
     .navbar-right > .mebox {
         margin: 0;
@@ -778,18 +851,7 @@ nav .social                           {
 
 
 /*USER PROFILE PAGE*/
-    .Button-EditProfile { padding: 8px 12px !important; }
-    .Popup .Button {
-        background: transparent;
-        color: #009688;
-        border: 1px solid #4db6ac;
-    }
-    .Popup .Button:hover {
-        background: #4db6ac !important;
-        color: #f5f5f5;
-        box-shadow: 2px 2px 4px #bdbdbd !important;
-    }
-
+    .Button-EditProfile             { padding: 8px 12px !important; }
     .ProfilePhotoLarge {
         width: 100%;
         height: 100%;
@@ -815,19 +877,13 @@ nav .social                           {
 
 
 /* CATEGORY LIST */
-    .Item {
-        background/*-color*/: #ffffff !important;
-    }
-    .CategoryList {
-        border: 1px solid #f5f5f5;
-        border-top: none;
-    }
-    .CategoryList .Depth1 {
-        border-top: 1px solid #f5f5f5;
-    }
-    .CategoryList .Depth2 {
-        padding: 0 16px 16px 125px !important;
-    }
+    .Item                                  { background/*-color*/: #ffffff !important; }
+    .CategoryList                          {
+                                             border: 1px solid #f5f5f5;
+                                             border-top: none;
+                                           }
+    .CategoryList .Depth1                  { border-top: 1px solid #f5f5f5; }
+    .CategoryList .Depth2                  { padding: 0 16px 16px 125px !important; }
     /*Makes the width of the total views and replies columns as small as possible to maximize space for other columns*/
 
 
@@ -843,11 +899,27 @@ nav .social                           {
         .DataTable .PhotoWrap, .LastUser { display:none !important; }
     }
 
+
+
+
 /* FORUM POSTS/COMMENTS */
-    .IPAddress { display: none; }
+    .IPAddress                             { display: none; }
 
     /* single comment in a Q&A thread which is marked as the "Accepted" answer */
-    .QnA-Item-Accepted { background-color: #f5f5f5 !important; box-shadow: 0 2px 24px rgba(0, 0, 0, 0.2);}
+    .MessageList .Item                     { padding: 16px 48px; }
+    .QnA-Item-Accepted                     { background-color: #e0f2f1 !important; } /* the background for the entire accepted answer */
+    .MessageList .QnA-Item-Accepted:before { border-right-color: #e0f2f1; } /* The arrow between the accepted answer and the user who posted it */
+    .Tag.QnA-Accepted                      { background: #26a69a; } /* The span label at the top right of the Accepted answer */
+    .Discussion th                         { vertical-align: bottom; }
+    .Discussion td                         { vertical-align: top; }
+    .Discussion table                      { width: 100%; }
+    .Discussion thead, .Discussion tr      { border-bottom: 1px solid #eeeeee; }
+    .Discussion td, .Discussion th         {
+                                             padding: 16px 5px 14px !important;
+                                             vertical-align: middle;
+                                             border-radius: 2px;
+                                           }
+    .Discussion tbody tr:hover             { background: #ede7f6; }
 
 
 
@@ -880,6 +952,9 @@ nav .social                           {
 
 
 /*STOCK SETTINGS*/
+.Breadcrumbs a, .Breadcrumbs a:visited, .Breadcrumbs:link { color: #4db6ac; }
+.Breadcrumbs a:focus, .Breadcrumbs a:active, .Breadcrumbs:hover { color: #26a69a; }
+
 .masthead {
     background/*-color*/: #ff9933;
     background-size: cover;
@@ -922,11 +997,6 @@ div.BoxFilter.BoxBestOfFilter li {
 }
 
 /* Image additions for Q&A */
-
-.QnA-Item-Accepted {
-    background-color: #eeeeee !important;
-}
-
 .Item.Role_Staff .MItem.RoleTitle {
     color: transparent;
     background: no-repeat url(https://static.v-cdn.net/demo/staff-tag.png);
@@ -1068,8 +1138,9 @@ a.Username {
   #nav_primary div input:checked ~ i,
   #nav_primary ul ul            { display: none !important; }
   .social .fa                   { display: inline-block !important; }
-/*  #nav_primary input            { position: absolute !important; }*/
-  #nav_primary > ul, nav .social{ position: fixed !important; }
+/*  #nav_primary input          { position: absolute !important; }*/
+  #nav_primary > ul,
+  #nav_primary .social          { position: fixed !important; }
   #nav_primary > ul             {
                                      -webkit-box-orient: vertical !important;
                                   -webkit-box-direction: normal !important;
@@ -1082,21 +1153,23 @@ a.Username {
   #signup                       { margin: 0; }
   .social                       { margin: 8px 0 16px; }
   #nav_primary .social          { margin: 0; }
-  #nav_primary ul, nav .social  { margin-left: 100%; }
+  #nav_primary ul, #nav_primary .social  { margin-left: 100%; }
   #nav_primary div.checked ~ ul{ margin-left: -5%; }
   #nav_primary ul               { padding: 48px 0 64px; }
   #nav_primary i, .social a     { padding: 0 !important; }
   footer .social a              { padding-top: 0; }
   #nav_primary input            { height: 100%; }
   #nav_primary ul               { height: 100%; }
-  #nav_primary, nav > ul > li   { height: auto; }
+  #nav_primary,
+  #nav_primary > ul > li        { height: auto; }
   #nav_primary, #brands img     { height: 48px; }
   #nav_primary li               { max-height: 14%; } /* ensures all line items fit on the screen, even on devices with less height */
   #nav_primary input            { width: 100%; }
-  #nav_primary, nav ul          { width: 100%; }
+  #nav_primary, #nav_primary ul { width: 100%; }
   .social a                     { height: auto; }
   .social a                     { width: auto; }
-  #nav_primary input, nav > ul  { top: 0; }
+  #nav_primary input,
+  #nav_primary > ul             { top: 0; }
   #nav_primary input            { right: 0; }
   #nav_primary .social          { bottom: 16px; }
   #nav_primary > ul             { background: #000; }

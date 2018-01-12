@@ -1,151 +1,55 @@
-/* MEDIA QUERIES */
-@media only screen and (min-width: 1921px) {
-  #nav_primary                    { padding-left: 10%; padding-right: 10%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+.ProfilePhotoMedium {
+    width: 96px;
+    height: 96px;
+
+
+.MessageList .Item { margin-left: 122px;
+
+
+.Tag.QnA-Accepted { background: #26a69a; }
+
+
+div.Popup .Border {
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+  padding: 24px;
+  border-radius: 3px;
+  background: #fff;
 }
-
-@media only screen and (min-width: 2160px) {
-  #nav_primary                    { padding-left: 13%; padding-right: 13%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+div.Popup .Body {
+  padding: 16px;
 }
-
-@media only screen and (min-width: 2561px) {
-  #nav_primary                    { padding-left: 15%; padding-right: 15%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+div.Popup .Content h1 { font-size: 175%; }
+.Popup .Buttons { margin-top: 16px; }
+.Popup .Buttons .Close {
+  background: #eeeeee;
+  border: 1px solid #eeeeee;
+  color: #757575;
 }
+.Popup .Buttons .Close:hover {
+    background: #e0e0e0 !important;
+    border: 1px solid #e0e0e0;
+    color: #424242;
+    /* box-shadow: 2px 2px 4px #e0e0e0 !important; */
 
 
-@media only screen and (max-width: 1440px) {
-	html, body									{ font-size: 15px; }
-  .field-wrapper input        { font-size: 12px; }
-	.content__button input			{ font-size: 14px; }
-  footer li                   { font-size: 16px; }
-	#footer_links input					{ font-size: 14px; }
-  #copyright                  { font-size: 12px; }
-  .social a                   { font-size: 24px; }
-	.social a                   { padding-top: 32px; }
-	#footer_links input         { height: 28px; }
-	.social a                   { height: 96px; width: 96px; }
-	#copyright img              { height: 38px; }
-}
+    .Buttons { cursor: default; }
+    .Button { outline: 0; }
+    change a:link to just a around line 100
 
 
-@media only screen and (max-width: 1280px) {
-	html, body                  { font-size: 14px; }
-  #nav_primary ul ul a        { line-height: 42px; }
-  .social                     { margin: 72px auto 16px auto; }
-  #nav_primary > li           { height: 64px; } /* shrink to match the new height of the navbar */
-  #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
-  #nav_primary > a            { background: url(../images/grooper_logo_140x46.png); height: 46px; width: 140px; }
-  #nav_primary ul ul          { top: 64px; }
-}
+    461 coor important
+
+.navbar .button
+    background-color: #009688;
+background-image: none;
+/* border: 1px solid #757575; */
+color: #f5f5f5;
 
 
-@media only screen and (max-width: 1024px) {
-	html, body                  { font-size: 13px; }
-	p                           { font-size: 15px; }
-  footer                      { padding: 64px 7% 8px 7%; }
-	.social a                   { padding-top: 32px; }
-	#nav_primary > ul > li > a  { margin: 0 8px; }
-  .social                     { margin: 64px auto 8px auto; }
-	#copyright img              { margin: 8px auto; }
-	.btn-sml                    { margin-top: 8px; }
-  .btn-lrg                    { padding: 8px 32px; }
-}
+.SearchButton { font-size: 16px; padding: 7px 16px;}
+input.InputBox { font-size: 14px; padding: 6px 16px; }
 
 
-@media (max-width: 768px) {
-	html, body									{ font-size: 12px; }
-  h1                          { font-size: 325%; }
-  h2                          { font-size: 300%; }
-  h4                          { font-size: 175%; }
-  footer,
-	footer h4, footer ul				{ text-align: center; }
-  #footer_links > div					{ padding: 32px 0; }
-	#signup											{ margin: 32px 32px 0 32px; }
-	#contact, #discover					{ -webkit-flex-basis: 50% !important;  -ms-flex-preferred-size: 50% !important;  flex-basis: 50% !important }
-	#signup											{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
-  #nav_primary > a						{
-																background: url(../images/g_color_32.png);
-																height: 32px;
-																width: 33px;
-															}
-}
+code, pre { border-radius: 3px; }
 
-
-@media (max-width: 600px){
-	html, body                    { font-size: 11px; }
-  footer h4                     { font-size: 28px; }
-  footer li                     { font-size: 18px; }
-  #nav_primary > ul > li > a    { font-size: 18px; } /*  increase from 16px to 18px now that this is in a full screen mobile style menu */
-  #nav_primary > ul > li > a    { line-height: 48px; }
-  footer h4, footer ul          { text-align: center; }
-	#nav_primary li,
-  #nav_primary input            { display: block !important; }
-  #nav_primary ul, .social      {
-                                  display: -webkit-box !important;
-                                  display: -webkit-flex !important;
-                                  display: -ms-flexbox !important;
-                                  display: flex !important;
-                                }
-	#nav_primary input:checked ~ i ~ i,
-	#nav_primary .fa-bars         {
-                                  display: -webkit-inline-box !important;
-                                  display: -webkit-inline-flex !important;
-                                  display: -ms-inline-flexbox !important;
-                                  display: inline-flex !important;
-                                }
-	#nav_primary input:checked ~ i,
-  #nav_primary ul ul            { display: none !important; }
-  .social .fa                   { display: inline-block !important; }
-	#nav_primary input            { position: absolute !important; }
-	#nav_primary > ul, nav .social{ position: fixed !important; }
-  #nav_primary > ul             {
-                                     -webkit-box-orient: vertical !important;
-                                  -webkit-box-direction: normal !important;
-                                     -ms-flex-direction: column !important;
-                                         flex-direction: column !important;
-                                }
-  #nav_primary > ul, .social    { -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
-  #nav_primary > ul             { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
-  #contact, #discover           { -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
-  #signup                       { margin: 0; }
-  .social                       { margin: 8px 0 16px; }
-  #nav_primary .social          { margin: 0; }
-  #nav_primary ul, nav .social  { margin-left: 100%; }
-  #nav_primary input:checked ~ ul{ margin-left: -5%; }
-  #nav_primary ul               { padding: 48px 0 64px; }
-	#nav_primary i, .social a     { padding: 0 !important; }
-	footer .social a              { padding-top: 0; }
-  #nav_primary input            { height: 100%; }
-  #nav_primary ul               { height: 100%; }
-  #nav_primary, nav > ul > li   { height: auto; }
-  #nav_primary, #brands img     { height: 48px; }
-  #nav_primary li               { max-height: 14%; } /* ensures all line items fit on the screen, even on devices with less height */
-  #nav_primary input            { width: 15%; }
-  #nav_primary, nav ul          { width: 100%; }
-  .social a                     { height: auto; }
-  .social a                     { width: auto; }
-  #nav_primary input, nav > ul  { top: 0; }
-  #nav_primary input            { right: 0; }
-  #nav_primary .social          { bottom: 16px; }
-  #nav_primary > ul             { background: #000; }
-  #nav_primary .social          { background: transparent; }
-  .social a                     { border: none; }
-  footer .social a,
-  footer .social a:hover        {
-																	background: transparent;
-																	-webkit-box-shadow: none;
-																	        box-shadow: none;
-																	-webkit-transform: none;
-																	    -ms-transform: none;
-																	        transform: none;
-																}
-  #nav_primary > ul             { opacity: 0.93; }
-  #nav_primary input            { z-index: 20000; }
-  #nav_primary                  { -webkit-font-smoothing: antialiased; } /* to stop flickering of text in safari */
-	#nav_primary > a              {
-																	-webkit-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
-																	     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
-																	        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
-																}
-  .social a:hover               { background: transparent !important; }
-  .social a:hover i             { color: rgba(255,255,255,.86); }
-}
+.MessageList .Item { padding: 48px 48px 16px 48px; }
