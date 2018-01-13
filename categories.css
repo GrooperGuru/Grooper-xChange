@@ -1,0 +1,27 @@
+.CategoryTable thead,
+.CategoryTable td.BigCount,
+.CategoryTable td.LatestPost
+ {
+  display: none;
+}
+
+.CategoryTable tbody {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  /*width: 100%;*/
+}
+.CategoryTable tbody tr {
+  /*display: block;*/
+  flex-basis: 50%;
+  background-color: transparent !important;
+  padding: 0;
+}
+
+.CategoryTable td {
+  border-bottom: none;
+  height: 300px;
+}
+.CategoryTable tbody tr:nth-child(odd) .PhotoWrap { float: right; }
+.CategoryTable tbody tr:nth-child(even) .PhotoWrap { float: left; }
