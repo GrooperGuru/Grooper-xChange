@@ -18,10 +18,19 @@
   background-color: transparent !important;
   padding: 0;
 }
-
+/*.CategoryTable tbody tr:nth-child(odd) .PhotoWrap { float: right; }
+.CategoryTable tbody tr:nth-child(even) .PhotoWrap { float: left; }*/
+.CategoryTable tbody tr:nth-child(4n-3) .PhotoWrap { float: right; }
+.CategoryTable tbody tr:nth-child(4n-2) .PhotoWrap { float: left; }
 .CategoryTable td {
   border-bottom: none;
   height: 300px;
 }
-.CategoryTable tbody tr:nth-child(odd) .PhotoWrap { float: right; }
-.CategoryTable tbody tr:nth-child(even) .PhotoWrap { float: left; }
+
+.CategoryTable .PhotoWrap,
+.CategoryTable .PhotoWrap:before { box-shadow: none; }
+.CategoryTable .CategoryPhoto {
+  max-height: 192px;
+  height: 192px;
+  width: 192px;
+}
