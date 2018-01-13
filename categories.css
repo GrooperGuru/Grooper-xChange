@@ -16,8 +16,9 @@
   /*display: block;*/
   flex-basis: 50%;
   background-color: transparent !important;
-  padding: 0;
 }
+.CategoryTable tbody tr,
+.CategoryTable tbody td { padding: 0; }
 /*.CategoryTable tbody tr:nth-child(odd) .PhotoWrap { float: right; }
 .CategoryTable tbody tr:nth-child(even) .PhotoWrap { float: left; }*/
 .CategoryTable tbody tr:nth-child(4n-3) .PhotoWrap,
@@ -28,7 +29,16 @@
   border-bottom: none;
   height: 300px;
 }
-
+.CategoryTable .Wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.CategoryTable .Wrap > * {
+  flex-basis: 100%;
+}
+.CategoryTable .PhotoWrap { margin: 16px 0; }
+.CategoryTable .CategoryPhoto { margin: 0 auto; }
 .CategoryTable .PhotoWrap,
 .CategoryTable .PhotoWrap:before { box-shadow: none; }
 .CategoryTable .CategoryPhoto {
