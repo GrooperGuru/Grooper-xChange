@@ -16,6 +16,7 @@
   /*display: block;*/
   flex-basis: 50%;
   background-color: transparent !important;
+  text-align: center;
 }
 .CategoryTable tbody tr,
 .CategoryTable tbody td { padding: 0; }
