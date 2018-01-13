@@ -20,7 +20,9 @@
 }
 /*.CategoryTable tbody tr:nth-child(odd) .PhotoWrap { float: right; }
 .CategoryTable tbody tr:nth-child(even) .PhotoWrap { float: left; }*/
-.CategoryTable tbody tr:nth-child(4n-3) .PhotoWrap { float: right; }
+.CategoryTable tbody tr:nth-child(4n-3) .PhotoWrap,
+.CategoryTable tbody tr:nth-child(4n) .PhotoWrap   { float: right; }
+.CategoryTable tbody tr:nth-child(4n-1) .PhotoWrap,
 .CategoryTable tbody tr:nth-child(4n-2) .PhotoWrap { float: left; }
 .CategoryTable td {
   border-bottom: none;
