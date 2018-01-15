@@ -117,14 +117,7 @@
 
 @media only screen and (max-width:600px) {
 
-  /* DISCUSSIONS LIST */
-  .DiscussionsTable .FirstUser { display: none; }
-}
-
-
-@media only screen and (max-width:432px) {
-
-  /* CATEGORY PAGES */
+  /* CATEGORIES PAGES */
   .CategoryTable tbody {
     -webkit-box-pack: center;
        -ms-flex-pack: center;
@@ -134,7 +127,26 @@
          -webkit-flex-basis: 94%;
     -ms-flex-preferred-size: 94%;
                  flex-basis: 94%;
+    text-align: left;
   }
+  .CategoryTable .Wrap { display: block; }
+  .CategoryTable .Options { width: 100%; }
+  .CategoryTable .CategoryPhoto {
+    max-height: 144px;
+    height: 144px;
+    width: 144px;
+    margin: 0 16px 0 0;
+  }
+  .CategoryDescription { width: calc(100% - 160px)}
+
+  /* DISCUSSIONS LIST */
+  .DiscussionsTable .FirstUser { display: none; }
+}
+
+
+@media only screen and (max-width:432px) {
+
+  /* CATEGORY PAGES */
   .CategoryTable h2 { font-size: 150%; }
   .CategoryDescription { font-size: 115%; }
 
