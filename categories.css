@@ -77,3 +77,20 @@
   .CategoryTable h2 { margin: 1em 0 .5em; }
   .CategoryTable .PhotoWrap { margin: 0; }
   .CategoryTable .CategoryPhoto { margin: 0 auto; }
+
+
+
+@media only screen and (max-width:1280px) {
+  .CategoryTable tbody tr {
+         -webkit-flex-basis: 46%;
+    -ms-flex-preferred-size: 46%;
+                 flex-basis: 46%;
+  }
+}
+@media only screen and (max-width:1024px) {
+  .CategoryTable .CategoryPhoto {
+    max-height: 192px;
+    height: 192px;
+    width: 192px;
+  }
+}

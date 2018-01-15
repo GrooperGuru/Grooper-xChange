@@ -73,3 +73,24 @@ code, pre { border-radius: 3px; }
   color: #000;
 }
 .Tag-Announcement { background: #26a69a}
+
+
+
+
+
+/* 1280px */
+.CategoryTable .CategoryPhoto {
+  max-height: 192px;
+  height: 192px;
+  width: 192px;
+}
+.CategoryDescription {
+  font-size: 90%;
+}
+
+/* 1024px */
+.CategoryTable .CategoryPhoto {
+  max-height: 144px;
+  height: 144px;
+  width: 144px;
+}
