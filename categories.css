@@ -140,7 +140,9 @@
   .CategoryDescription { width:100%; }
 
   /* DISCUSSIONS LIST */
-  .DiscussionsTable .FirstUser { display: none; }
+  .DiscussionsTable .FirstUser,
+  .DiscussionsTable .CountReplies,
+  .DiscussionsTable .CountComments { display: none; }
 }
 
 
@@ -158,7 +160,5 @@
   .CategoryDescription { font-size: 115%; }
 
   /* DISCUSSIONS LIST */
-  .DiscussionsTable td.BlockColumn-User, /*The Created By and LAst Commented User columns */
-  .DiscussionsTable td.CountReplies,
-  .DiscussionsTable td.CountComments { display: none; }
+  .DiscussionsTable td.BlockColumn-User { display: none; }
 }
