@@ -8,15 +8,22 @@
     display: none;
   }
   .CategoryTable tbody {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+       -ms-flex-pack: justify;
+     justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     align-items: flex-start;
     /*width: 100%;*/
   }
   .CategoryTable tbody tr {
     /*display: block;*/
-    flex-basis: 30%;
+         -webkit-flex-basis: 30%;
+    -ms-flex-preferred-size: 30%;
+                 flex-basis: 30%;
     background-color: transparent !important;
   }
   .CategoryTable tbody tr,
@@ -29,9 +36,9 @@
   .CategoryTable .PhotoWrap,
   .CategoryTable .PhotoWrap:before { box-shadow: none; }
   .CategoryTable .CategoryPhoto {
-    max-height: 192px;
-    height: 192px;
-    width: 192px;
+    max-height: 256px;
+    height: 256px;
+    width: 256px;
   }
 
 /* Style A - Uses floats for alignment */
@@ -53,12 +60,19 @@
     margin: 16px 0;
   }
   .CategoryTable .Wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+       -ms-flex-pack: center;
+     justify-content: center;
+     -ms-flex-wrap: wrap;
+         flex-wrap: wrap;
   }
   .CategoryTable .Wrap > * {
-    flex-basis: 100%;
+         -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+                 flex-basis: 100%;
   }
   .CategoryTable h2 { margin: 1em 0 .5em; }
   .CategoryTable .PhotoWrap { margin: 0; }

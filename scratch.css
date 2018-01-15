@@ -53,3 +53,23 @@ input.InputBox { font-size: 14px; padding: 6px 16px; }
 code, pre { border-radius: 3px; }
 
 .MessageList .Item { padding: 48px 48px 16px 48px; }
+
+
+.InfoMessage {
+  margin: 0 0 16px;
+  padding-left: 16px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+
+.Announcement-Category td {
+  background-color: #e0f2f1
+}
+.Announcement-Category .DiscussionName .Title {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}
+.Tag-Announcement { background: #26a69a}
