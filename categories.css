@@ -45,7 +45,8 @@
     border-bottom: none;
     /*height: 300px;*/
   }
-  .CategoryTable .Options { margin-left: 0; }
+  /*.CategoryTable .Options { margin-left: 0; }*/
+  .CategoryTable .Options { display: none; }
   .CategoryTable .PhotoWrap,
   .CategoryTable .PhotoWrap:before { box-shadow: none; }
   .CategoryTable .CategoryPhoto {
@@ -130,7 +131,7 @@
     text-align: left;
   }
   .CategoryTable .Wrap { display: block; }
-  .CategoryTable .Options { width: 100%; }
+  /*.CategoryTable .Options { width: 100%; }*/
   .CategoryTable .CategoryPhoto {
     max-height: 144px;
     height: 144px;
