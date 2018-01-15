@@ -50,6 +50,7 @@
 /* Style B - Uses Flexing and centering */
   .CategoryTable tbody tr {
     text-align: center;
+    margin: 16px 0;
   }
   .CategoryTable .Wrap {
     display: flex;
@@ -60,5 +61,5 @@
     flex-basis: 100%;
   }
   .CategoryTable h2 { margin: 1em 0 .5em; }
-  .CategoryTable .PhotoWrap { margin: 16px 0; }
+  .CategoryTable .PhotoWrap { margin: 0; }
   .CategoryTable .CategoryPhoto { margin: 0 auto; }
