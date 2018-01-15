@@ -139,6 +139,7 @@
   .CategoryDescription { font-size: 115%; }
 
   /* DISCUSSIONS LIST */
+  .DiscussionsTable td.BlockColumn-User, /*The Created By and LAst Commented User columns */
   .DiscussionsTable td.CountReplies,
   .DiscussionsTable td.CountComments { display: none; }
 }
