@@ -137,7 +137,7 @@
     width: 144px;
     margin: 0 16px 0 0;
   }
-  .CategoryDescription { width: calc(100% - 160px)}
+  .CategoryDescription { width:100%; }
 
   /* DISCUSSIONS LIST */
   .DiscussionsTable .FirstUser { display: none; }
@@ -147,6 +147,13 @@
 @media only screen and (max-width:432px) {
 
   /* CATEGORY PAGES */
+  .CategoryTable tbody tr { text-align: center; }
+  .CategoryTable .Wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .CategoryTable .CategoryPhoto { margin: 0 auto; }
   .CategoryTable h2 { font-size: 150%; }
   .CategoryDescription { font-size: 115%; }
 
