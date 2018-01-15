@@ -45,7 +45,6 @@
   .CategoryTable tbody tr:nth-child(4n) .PhotoWrap   { float: right; }
   .CategoryTable tbody tr:nth-child(4n-1) .PhotoWrap,
   .CategoryTable tbody tr:nth-child(4n-2) .PhotoWrap { float: left; }
-  .CategoryTable .CategoryPhoto { margin: 0 auto; }
   */
 
 /* Style B - Uses Flexing and centering */
@@ -62,3 +61,4 @@
   }
   .CategoryTable h2 { margin: 1em 0 .5em; }
   .CategoryTable .PhotoWrap { margin: 16px 0; }
+  .CategoryTable .CategoryPhoto { margin: 0 auto; }
