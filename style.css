@@ -6,8 +6,8 @@ html                            { box-sizing: content-box; }
 /**, *:before, *:after            { box-sizing: inherit; }*/
 html, body                      { overflow-x: hidden }
 body                            { line-height: normal; }
-.navbar                         { top: 96px !important; }
-.navbar + div                   { height: 149px !important; } /*temporary fix to move breadcrumb and main down below extra nav bar */
+.navbar_vanilla                 { top: 96px !important; }
+.navbar_vanilla + div           { height: 149px !important; } /*temporary fix to move breadcrumb and main down below extra nav bar */
 
 /* 1.3 - Eliminate default input button styles imposed by browsers like safari - 1.3 */
 /*input, button					{
@@ -63,6 +63,7 @@ html, body                    { font-family: 'Roboto', Arial, sans-serif; }
 /* 2.4 - Text Alignment - 2.4 */
 footer h4                       { text-align: left; }
 footer .social, #copyright,
+.Section-CategoryList h1,
 #nav_primary ul                 { text-align: center; }
 
 /* 2.5 - Font Size - 2.5 */
@@ -77,6 +78,7 @@ footer h4                       { font-size: 150%; }
 blockquote p                    { font-size: 150%; }
 .btn-lrg                        { font-size: 125%; }
 .btn-sml                        { font-size: 100%; }
+.Section-CategoryList h1        { font-size: 350%; } /*only impacts category page h1 */
 #nav_primary i, .social a       { font-size: 32px; }
 #nav_primary > ul > li > a,
 footer li                       { font-size: 16px; }
@@ -90,7 +92,8 @@ footer li                       { font-size: 16px; }
 
 
 /* 2.6 - Font Weight - 2.6 */
-*, footer h4                    { font-weight: 300; } /* Establishes a baseline font-weight for all items which overrides the browsers defaults */
+*                               { font-weight: 400; }  /* Establishes a baseline font-weight for all items which overrides the browsers defaults */
+footer h4                       { font-weight: 300; }
 h1                              { font-weight: 100; }
 h2, h3, h4                      { font-weight: 300; }
 em, strong                      { font-weight: 400; }
@@ -100,10 +103,12 @@ thead, th, i                    { font-weight: 500; }
 .TagCloud li a, .Discussion a   { font-weight: 400; }
 .field-wrapper input,
 .CategoryTable h2               { font-weight: 500; }
+#nav_primary > ul > li          { font-weight: 300; }
 
 
 /* 2.7 - Color - 2.7 */
-p                               { color: rgba(17,17,17,.7); }
+body                            { color: #212121; }
+p                               { color: #212121; }
 a:not(.Button),
 a:not(.Button):visited          { color: #424242; }
 a:not(.Button):hover,
@@ -153,7 +158,7 @@ p                               { line-height: 1.5em; }
 main li                         { line-height: 1.3em; } /* important to use main li so we do not impact the lists for navigation and footer */
 #nav_primary > ul > li > a      { line-height: 36px; } /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
 .CategoryDescription            { line-height: 1.5em; }
-li p                            { line0height: 1em; }
+li p                            { line-height: 1em; }
 
 /* 2.9.2 - Lists - 2.9.2 */
 footer ul                       { list-style: none; }
@@ -252,6 +257,7 @@ footer .social a                { display: inline-block; }
 /* 4.3 - Margin & Padding - 4.3 */
 main                        { padding-bottom: 96px; }
 footer                      { padding: 96px 18% 16px 18%; }
+code, pre                   { padding: 1px 4px; }
 #nav_primary                { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
 .social                     { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
 .Reactions                  { margin: 2em 0 0 0; }
@@ -381,45 +387,45 @@ footer form                     { margin-top: 24px; }
 
 /* TRANSFORMS AND TRANSITIONS */
 
-.noScroll                             {
-                                        overflow: hidden;
-                                        width: 100%;
-                                      }
-#nav_primary > ul > li > a:before     { /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale */
-																				-webkit-transform: scaleX(0);
-																				    -ms-transform: scaleX(0);
-																				        transform: scaleX(0);
-																			}
+.noScroll                               {
+                                          overflow: hidden;
+                                          width: 100%;
+                                        }
+#nav_primary > ul > li > a:before       { /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale */
+                                          -webkit-transform: scaleX(0);
+                                              -ms-transform: scaleX(0);
+                                                  transform: scaleX(0);
+                                        }
 #nav_primary > ul > li > a:hover:before { /* transforms primary nav underlines from the inside to the outside */
-																				-webkit-transform: scaleX(1);
-																				    -ms-transform: scaleX(1);
-																				        transform: scaleX(1);
-																			}
-footer .social a:hover                {
-																				-webkit-transform: scale(1.1);
-																				    -ms-transform: scale(1.1);
-																				        transform: scale(1.1);
-																			}
+                                          -webkit-transform: scaleX(1);
+                                              -ms-transform: scaleX(1);
+                                                  transform: scaleX(1);
+                                        }
+footer .social a:hover                  {
+                                          -webkit-transform: scale(1.1);
+                                              -ms-transform: scale(1.1);
+                                                  transform: scale(1.1);
+                                        }
 
 #nav_primary > ul > li > a:before,
 #nav_primary ul ul,
 #nav_primary ul ul li,
 #nav_primary ul ul a,
 .btn-lrg, .btn-sml, .social a, .fa		{
-																				-webkit-transition: all 0.2s linear 0s !important;
-																				     -o-transition: all 0.2s linear 0s !important;
-																				        transition: all 0.2s linear 0s !important;
-																			}
-nav .social                           {
-																				-webkit-transition: all 0.3s linear !important;
-																				     -o-transition: all 0.3s linear !important;
-																				        transition: all 0.3s linear !important;
-																			}
-.no-transition												{
-																				-webkit-transition: none;
-																				     -o-transition: none;
-																				        transition: none;
-																			}
+                                          -webkit-transition: all 0.2s linear 0s !important;
+                                               -o-transition: all 0.2s linear 0s !important;
+                                                  transition: all 0.2s linear 0s !important;
+                                        }
+nav .social                             {
+                                          -webkit-transition: all 0.3s linear !important;
+                                               -o-transition: all 0.3s linear !important;
+                                                  transition: all 0.3s linear !important;
+                                        }
+.no-transition                          {
+                                          -webkit-transition: none;
+                                               -o-transition: none;
+                                                  transition: none;
+                                        }
 
 
 /* Global Transitioning */
@@ -451,13 +457,13 @@ nav .social                           {
     .Button:hover, .Button:focus, .Button:active { background: #eeeeee !important; }
 
     /* Login and Register buttons on the top nav when somebody is not logged in */
-    .navbar .button                              {
+    .navbar_vanilla .button                      {
                                                    background-color: #009688;
                                                    background-image: none;
                                                    color: #f5f5f5;
                                                    margin: -2px 0;
                                                  }
-    .navbar .Button                              { float: right; /*padding: 4px 16px;*/}
+    .navbar_vanilla .Button                      { float: right; /*padding: 4px 16px;*/}
 
 
     /* Search Button on Top Nav Bar */
@@ -564,7 +570,8 @@ nav .social                           {
 
 
     .TagCloud li {
-        background/*-color*/: #ffffff !important;
+        background: #ffffff !important;
+        border-color: #f5f5f5;
     }
 
     /*page title color*/
@@ -595,7 +602,7 @@ nav .social                           {
         margin-left: auto;
         margin-right: auto;
     }
-    .column-content, input#form_Search.InputBox, nav.navbar form > div, navbar form, .navbar > .container > form {
+    .column-content, input#form_Search.InputBox, nav.navbar_vanilla form > div, navbar form, .navbar_vanilla > .container > form {
         display: inline-block;
         float: left;
         width: calc(97% - 260px);
@@ -613,10 +620,10 @@ nav .social                           {
     .trail > .container{
         margin-left:0px;
     }
-    .navbar {
+    .navbar_vanilla {
         padding: 8px 0;
     }
-    .navbar > .container > form > div {
+    .navbar_vanilla > .container > form > div {
         display: inline-block;
         white-space: normal;
         width: 100% !important;
@@ -635,7 +642,7 @@ nav .social                           {
         .container, /*footer, */.trail, .termsofservice #content {
             width: 96%;
         }
-        .column-content, input#form_Search.InputBox, .navbar form > div, navbar form, .navbar > .container > form {
+        .column-content, input#form_Search.InputBox, .navbar_vanilla form > div, navbar form, .navbar_vanilla > .container > form {
             width: calc(98% - 206px) !important;
         }
         .column-sidebar, .navbar-right {
@@ -741,6 +748,17 @@ nav .social                           {
                                 }
 
 
+/*NOTIFICATION MESSAGES*/
+    .InfoMessage {
+      margin: 0 0 16px;
+      padding-left: 16px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+
+
 /*SEARCH AND BUTTON*/
     input#Form_Search.InputBox {
         float: left;
@@ -774,6 +792,14 @@ nav .social                           {
     .navbar-right > .mebox {
         margin: 0;
     }
+
+    /* FLYOUT MENUS */
+    .Flyout *, .MenuItems * {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.2em;
+    }
+
     /*hide username when on tablet sized screen*/
     @media only screen and (max-width:1024px) {
     	.mebox {
@@ -832,9 +858,7 @@ nav .social                           {
     .Depth1 .Meta {
         padding-top: 16px;
     }
-    .CategoryDescription, .DataList .Item .Meta {
-        padding-right: 32px;
-    }
+
 
     .site-sidebar h4, .site-sidebar h5, .site-sidebar h6 { margin-top: 0; margin-bottom: 0; }
     .site-sidebar li a {
@@ -851,7 +875,7 @@ nav .social                           {
 
 
 /*USER PROFILE PAGE*/
-    .Button-EditProfile             { padding: 8px 12px !important; }
+    .Button-EditProfile { padding: 8px 12px !important; }
     .ProfilePhotoLarge {
         width: 100%;
         height: 100%;
@@ -865,7 +889,7 @@ nav .social                           {
             margin-right: 0;
             margin-left: 5px;
         }
-        .MeBox, .mebox, .navbar .mebox .PhotoWrap {
+        .MeBox, .mebox, .navbar_vanilla .mebox .PhotoWrap {
             float: right;
         }
         .CountLabel { font-size: .8em; }
@@ -873,10 +897,14 @@ nav .social                           {
     }
 
 
-
+/*PRIVATE MESSAGES*/
+    .Conversation-User img {
+        display: inherit;
+    }
 
 
 /* CATEGORY LIST */
+    .Section-CategoryList .Breadcrumbs     { display: none; } /*hides breadcrumbs on categories pages */
     .Item                                  { background/*-color*/: #ffffff !important; }
     .CategoryList                          {
                                              border: 1px solid #f5f5f5;
@@ -894,10 +922,32 @@ nav .social                           {
 /* FORUM DISCUSSION LIST AND TABLE */
     .DiscussionsTable td.BigCount { width: 57px; }
     .DataTable .BlockColumn-User { width: 12%; }
-    .DataTable td { vertical-align: top; }
-    @media only screen and (max-width:600px) {
-        .DataTable .PhotoWrap, .LastUser { display:none !important; }
+    .DataTable td {
+        vertical-align: top;
+        border-bottom: 1px solid #eee;
     }
+
+    /* HIDING ALL OF THE TAGS UNDERNEATH POST TITLES */
+    .DiscussionName:not(.Announcement) .Meta { display: none; }
+
+    /* READ ITEMS */
+    .Item.Read {
+        background: inherit;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+
+    /* FOR SPECIAL ANNONCEMENT DISCUSSIONS */
+    .Announcement-Category td {
+      background-color: #edf7f7;
+    }
+    .Announcement-Category .DiscussionName .Title {
+      font-weight: 500;
+      font-size: 15px;
+      color: #000;
+    }
+    .Tag-Announcement { background: #26a69a; }
 
 
 
@@ -907,8 +957,8 @@ nav .social                           {
 
     /* single comment in a Q&A thread which is marked as the "Accepted" answer */
     .MessageList .Item                     { padding: 16px 48px; }
-    .QnA-Item-Accepted                     { background-color: #e0f2f1 !important; } /* the background for the entire accepted answer */
-    .MessageList .QnA-Item-Accepted:before { border-right-color: #e0f2f1; } /* The arrow between the accepted answer and the user who posted it */
+    .QnA-Item-Accepted                     { background-color: #edf7f7 !important; } /* the background for the entire accepted answer */
+    .MessageList .QnA-Item-Accepted:before { border-right-color: #edf7f7; } /* The arrow between the accepted answer and the user who posted it */
     .Tag.QnA-Accepted                      { background: #26a69a; } /* The span label at the top right of the Accepted answer */
     .Discussion th                         { vertical-align: bottom; }
     .Discussion td                         { vertical-align: top; }
@@ -941,15 +991,6 @@ nav .social                           {
 /*OTHER*/
 
     h1.HomepageTitle { margin-top: 0; }
-/*
-    h1 { font-size: 1.5em; }
-    h2 { font-size: 1.1em; }
-    h3 { font-size: 1.0em; }
-    h4 { font-size: 0.9em; }
-    a { color: #3E444E; }
-*/
-
-
 
 /*STOCK SETTINGS*/
 .Breadcrumbs a, .Breadcrumbs a:visited, .Breadcrumbs:link { color: #4db6ac; }
@@ -961,18 +1002,13 @@ nav .social                           {
     background-image: url("http://media.gettyimages.com/photos/orange-eyes-picture-id90107760") !important;
 }
 
-.navbar {
+.navbar_vanilla {
     background/*-color*/: #3E444E;
     background-image: none !important;
     background-size: cover;
 
 }
-/*
- a:hover, a:focus {
-    color: #2eb2a8;
-    text-decoration: none;
-}
-*/
+
 span.MItem.RSS {
     display: none !important
 }
@@ -1035,7 +1071,25 @@ a.Username {
     font-color: #ffffff;
 }
 
+/* FINAL VANILLA NAVBAR FIX */
+.navbar_vanilla {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
 
+.trail {
+  margin-top: 176px;
+}
+.MeBox.Inline, .MeBox.Inline .WhoIs, .MeBox.Inline .MeMenu {
+    line-height: inherit;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center
+}
 
 
 
@@ -1076,8 +1130,9 @@ a.Username {
   #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
   #nav_primary > a            { background: url(https://grooperguru.github.io/images/grooper_logo_140x46.png); height: 46px; width: 140px; }
   #nav_primary ul ul          { top: 64px; }
-  .navbar                     { top: 64px !important; }
-  .navbar + div               { height: 117px !important; } /*temporary fix to move breadcrumb and main down below extra nav bar */
+  .navbar_vanilla             { top: 64px !important; }
+  .navbar_vanilla + div       { height: 117px !important; } /*temporary fix to move breadcrumb and main down below extra nav bar */
+  .trail                      { margin-top: 144px; }
 }
 
 
@@ -1096,8 +1151,8 @@ a.Username {
 
 @media (max-width: 768px) {
   html, body                  { font-size: 12px; }
-  h1                          { font-size: 325%; }
-  h2                          { font-size: 300%; }
+  h1                          { font-size: 250%; }
+  h2                          { font-size: 225%; }
   h4                          { font-size: 175%; }
   footer,
   footer h4, footer ul        { text-align: center; }
@@ -1138,7 +1193,6 @@ a.Username {
   #nav_primary div input:checked ~ i,
   #nav_primary ul ul            { display: none !important; }
   .social .fa                   { display: inline-block !important; }
-/*  #nav_primary input          { position: absolute !important; }*/
   #nav_primary > ul,
   #nav_primary .social          { position: fixed !important; }
   #nav_primary > ul             {
@@ -1196,6 +1250,8 @@ a.Username {
 
   #nav_primary .icheckbox       { top: 0; right: 0; width:15%; height: 100%; z-index: 20000;}
   #nav_primary .icheckbox::before { height: 100%; width: 100%;}
-  .navbar                       { top: 48px !important; }
-  .navbar + div                 { height: 101px !important; } /*temporary fix to move breadcrumb and main down below extra nav bar */
+  .navbar_vanilla               { top: 48px !important; }
+  .navbar_vanilla + div         { height: 101px !important; } /*temporary fix to move breadcrumb and main down below extra nav bar */
+  .trail                        { margin-top: 128px; }
+  .navbar_vanilla, #nav_primary { position: absolute; }
 }
